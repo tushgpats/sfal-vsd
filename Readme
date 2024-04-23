@@ -1,5 +1,9 @@
 Tools install
   Yosys
 
-  ```whatever is inside```
+```
+hello
+void_init(){}
+
+```
 
