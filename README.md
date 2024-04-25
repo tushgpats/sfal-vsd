@@ -28,3 +28,15 @@ $ sudo apt install gtkwave
 ```
 
 ![WhatsApp Image 2024-04-16 at 21 33 36](https://github.com/tushgpats/sfal-vsd/assets/47535296/24bb3cf4-b11e-4687-8246-2227c6dd32ec)
+
+<h1> Day 1 - Introduction to Verilog RTL design and Synthesis </h1>
+
+We First run simulation on the good_mux using our testbench tb_good_mux in IVerilog
+
+![WhatsApp Image 2024-04-23 at 16 03 25](https://github.com/tushgpats/sfal-vsd/assets/47535296/3d0e8105-a7d2-40da-b873-b0c0b42520c5)
+![WhatsApp Image 2024-04-23 at 16 04 20](https://github.com/tushgpats/sfal-vsd/assets/47535296/3d1537ab-59b4-47c8-86e2-1c0a61649e51)
+
+We now observe the waveforms with gtkwave
+
+![WhatsApp Image 2024-04-23 at 16 01 01](https://github.com/tushgpats/sfal-vsd/assets/47535296/c73af362-67c3-4718-ad93-d0b943af40bb)
+
