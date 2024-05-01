@@ -105,14 +105,14 @@ Now let us move to labs
 <img width="717" alt="Screenshot 2024-04-27 at 1 17 26 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/4cf761b2-f5ca-4eea-afab-6bfbb749f3da">
 <img width="717" alt="Screenshot 2024-04-27 at 1 18 05 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/b2805b27-6b93-4f34-a0d9-1aab6b3f0c83">
 <img width="717" alt="Screenshot 2024-04-27 at 1 19 19 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/fcbfb2e4-d163-400f-adac-d88f7f0c36ca">
-
-
-
-
-
-
-
-
+<img width="717" alt="Screenshot 2024-04-27 at 2 39 37 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/23bd5053-eb57-474e-bc63-15c6c52a0a65">
+<img width="717" alt="Screenshot 2024-04-27 at 2 41 56 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/e3add5a4-7151-4a12-92f4-24ec3adc3835">
+<img width="1059" alt="Screenshot 2024-04-27 at 2 42 44 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/a5aec497-6974-49e8-98ad-4c41cb081e54">
+<img width="675" alt="Screenshot 2024-04-27 at 2 49 19 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/9dddeeaa-4001-4464-b9fc-fd4634605d88">
+<img width="675" alt="Screenshot 2024-04-27 at 2 51 50 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/daebaaa2-3971-4885-aef9-ba6917d43d8c">
+<img width="1437" alt="Screenshot 2024-04-27 at 2 56 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/b2c143c3-f72d-4986-b898-42edb3bcb737">
+<img width="675" alt="Screenshot 2024-04-27 at 3 02 46 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/b693b99d-1fd9-40a6-9b8c-824f0760e889">
+<img width="675" alt="Screenshot 2024-04-27 at 3 06 45 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1f272aef-d8b5-44be-b92f-1f2c11b023eb">
 
 
 
