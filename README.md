@@ -85,6 +85,42 @@ Now let us move to labs
 <img width="782" alt="Screenshot 2024-04-27 at 8 17 48 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/c46123c7-0436-4dc8-bbd2-0eab9307604c">
 <img width="782" alt="Screenshot 2024-04-27 at 8 15 34 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/2da7b71b-37bd-4b0a-8464-ec6e6b67eed3">
 <img width="715" alt="Screenshot 2024-04-27 at 11 18 17 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/467976b8-09c8-4d36-b979-f36d0466b523">
+<img width="715" alt="Screenshot 2024-04-27 at 11 18 46 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/2db12593-0a0d-4230-add8-88be4bc7d8a5">
+<img width="715" alt="Screenshot 2024-04-27 at 11 21 12 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/dfa3660b-c440-4ddd-bd48-7f66e6c808ea">
+<img width="1327" alt="Screenshot 2024-04-27 at 11 22 01 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1a7d6914-25dc-4377-9ea6-5539e69c515f">
+<img width="714" alt="Screenshot 2024-04-27 at 12 23 33 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/090f6086-eb91-4fe3-91a6-b10385121e21">
+<img width="1121" alt="Screenshot 2024-04-27 at 12 24 40 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/28178f01-2542-4d67-ac50-937f9e8634ba">
+<img width="723" alt="Screenshot 2024-04-27 at 12 36 23 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ccf171ee-e778-4348-8eb4-e60190637614">
+<img width="1183" alt="Screenshot 2024-04-27 at 12 36 46 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/4f45acfb-8794-4a7c-974f-f3bed2a70057">
+<img width="1183" alt="Screenshot 2024-04-27 at 12 53 22 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/aa9d14b9-939d-4c28-b795-8962c24f2917">
+<img width="717" alt="Screenshot 2024-04-27 at 12 53 52 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/015bb213-1dd6-4855-93e4-ae74792954eb">
+<img width="717" alt="Screenshot 2024-04-27 at 1 02 28 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/8107fe70-c0b6-4ff3-a3e1-3f401a1ff88d">
+<img width="717" alt="Screenshot 2024-04-27 at 1 03 56 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/80176c43-143d-44a4-b665-be1344f9b6be">
+<img width="717" alt="Screenshot 2024-04-27 at 1 05 35 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/4e0b2f8a-44b1-4f9e-9650-e45dced52608">
+<img width="717" alt="Screenshot 2024-04-27 at 1 06 24 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/fb39ce26-49d3-41e3-92e5-0adf66035c03">
+<img width="717" alt="Screenshot 2024-04-27 at 1 10 36 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/9116adea-216b-4551-9d8a-d5d9493854bd">
+<img width="717" alt="Screenshot 2024-04-27 at 1 11 55 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/6178a90b-c315-446e-a88f-27006ca9b168">
+<img width="717" alt="Screenshot 2024-04-27 at 1 12 49 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/b2860ab1-e201-4290-80c3-4f7f415d1b80">
+<img width="717" alt="Screenshot 2024-04-27 at 1 16 27 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/3fd6b4cb-44e9-4d69-b728-4775efd92075">
+<img width="717" alt="Screenshot 2024-04-27 at 1 17 26 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/4cf761b2-f5ca-4eea-afab-6bfbb749f3da">
+<img width="717" alt="Screenshot 2024-04-27 at 1 18 05 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/b2805b27-6b93-4f34-a0d9-1aab6b3f0c83">
+<img width="717" alt="Screenshot 2024-04-27 at 1 19 19 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/fcbfb2e4-d163-400f-adac-d88f7f0c36ca">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h1> Day 3 - Combinational and sequential optimizations </h1>
 
