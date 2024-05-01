@@ -40,6 +40,55 @@ We now observe the waveforms with gtkwave
 
 ![WhatsApp Image 2024-04-23 at 16 01 01](https://github.com/tushgpats/sfal-vsd/assets/47535296/c73af362-67c3-4718-ad93-d0b943af40bb)
 
+
+<h1>Day 2 - Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles </h1>
+ Let us first start by taking a look at lib files. If we see we see lot of terms such as sc, fd, tt. here tt refers to typical and the term 25C refers to the operating tempreture of the chips that can be designed with this technologyu lib. Libraries can be slow , fast as well as typical we are also concerned about the PVT Parameters ie Process, voltage and Tempreture. It also describes the technology, time unit, Voltage, Capacitance, Current and Power units (ns,V,mA,nW).Operating conditions talk about PVT Parameters which in this case are Typical,25 Degrees C and 1 Volt. 
+<img width="944" alt="Screenshot 2024-04-30 at 3 59 54 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/73e961f8-a79b-48d7-aa16-4de26a87f2c0">
+<img width="447" alt="Screenshot 2024-04-30 at 4 07 25 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/c5146658-4eb7-4efd-8b3c-d9e64973bf95">
+
+Now let us take a closer look at the lib files. Let us consider the very first cell. It has the functionality of the first cell. a21110 means the first 2 inputs are AND and rest all are ORed. We can confirm this by taking a look at its Verilog Model. For every possible input combination it is imperative that we should know the value of delay as well as power. this information is mention for every input combination. We also see information such as area, Pins and various parameters associated with the pin such as Capacitance, delay, transition time. there can also be similar gates as in this instance 2 diffrent AND2 gates with diffrent areas.
+<img width="767" alt="Screenshot 2024-04-30 at 4 19 52 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/7f29a998-ba13-4744-beba-51c1001ef8fa">
+<img width="767" alt="Screenshot 2024-04-30 at 4 20 32 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/e8492719-4d8f-4d51-8662-879bfe60072e">
+<img width="767" alt="Screenshot 2024-04-30 at 4 38 30 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ceef8c8d-405f-4873-8f73-d2c0c1c69b41">
+<img width="767" alt="Screenshot 2024-04-30 at 4 39 40 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/477f00a0-dc49-4a8b-b6be-91ddbacc7f31">
+<img width="800" alt="Screenshot 2024-04-30 at 4 49 58 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/7a471a84-27bd-43a4-9678-fc6816cf7289">
+
+Now let us talk about Hierarchial and Flat Synthesis.
+Hierarchical synthesis organizes a design into a hierarchy of smaller blocks, enabling modular development and easier management of complex systems. In contrast, flatten synthesis combines all design elements into a single level, simplifying implementation but potentially sacrificing readability and reusability. The choice between the two depends on the project's size, complexity, and requirements for maintainability and performance.
+
+<img width="471" alt="Screenshot 2024-04-30 at 4 53 46 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/54de9664-ada9-4ee0-a576-f01aee8bfaaa">
+<img width="453" alt="Screenshot 2024-04-30 at 4 55 00 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/73c8dd53-93f7-4bd2-9096-f1cde7b91813">
+<img width="453" alt="Screenshot 2024-04-30 at 4 57 20 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ffb6332b-34bd-40de-82ac-6679a8471809">
+
+We now talk about optimizing flop coding styles.
+
+<img width="472" alt="Screenshot 2024-04-30 at 4 59 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ddea0f6c-30d7-49cf-8ff3-3a9f6a4e0a56">
+<img width="472" alt="Screenshot 2024-04-30 at 4 58 37 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/72bc56df-7bc4-4d07-b573-8160b6138ccb">
+<img width="916" alt="Screenshot 2024-04-30 at 5 00 45 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/4bade418-16b8-4c8c-870b-4a36f9f71991">
+<img width="937" alt="Screenshot 2024-04-30 at 5 02 02 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/3c47a78a-0472-4748-8dbe-6e74ce55a575">
+<img width="722" alt="Screenshot 2024-04-30 at 5 03 00 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/5660720c-ab4e-4a0b-84ab-bc01aa02b893">
+
+Now let us move to labs
+
+<img width="732" alt="Screenshot 2024-04-27 at 10 56 36 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/e82f9d1b-77c3-4baa-9228-243c6dbb0777">
+<img width="1430" alt="Screenshot 2024-04-27 at 10 58 16 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/505869a6-8cc4-4cb7-a154-d0fec099b1c5">
+<img width="732" alt="Screenshot 2024-04-27 at 10 53 13 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/8b9d178f-4076-4bd6-b059-f77fe6e9cf3d">
+<img width="732" alt="Screenshot 2024-04-27 at 10 56 19 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/9e964b31-e59c-4c16-a29b-fe47e820177c">
+<img width="1432" alt="Screenshot 2024-04-25 at 10 36 43 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/0ba316f9-50cb-4795-a9f9-f49eb3c61706">
+<img width="1432" alt="Screenshot 2024-04-25 at 10 34 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/4c4957be-0a38-4077-932e-25323281eb77">
+<img width="1384" alt="Screenshot 2024-04-27 at 8 33 44 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ee850a4d-a372-4c86-be17-67d399751c6d">
+<img width="1415" alt="Screenshot 2024-04-27 at 8 32 11 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/712da9c7-1c29-444d-b444-fabe5cccbfec">
+<img width="1346" alt="Screenshot 2024-04-27 at 8 21 34 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/874a362e-def2-4f33-b136-d03260328af1">
+<img width="1415" alt="Screenshot 2024-04-27 at 8 26 01 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/368ab688-d0bc-4dc5-a9be-82575f966dbe">
+<img width="782" alt="Screenshot 2024-04-27 at 8 18 23 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1334b2a5-e9d5-4ef2-9d66-682c577daea3">
+<img width="782" alt="Screenshot 2024-04-27 at 8 18 43 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/cc7c5b35-f0e6-4055-8429-4863ac1035de">
+<img width="782" alt="Screenshot 2024-04-27 at 8 17 48 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/c46123c7-0436-4dc8-bbd2-0eab9307604c">
+<img width="782" alt="Screenshot 2024-04-27 at 8 15 34 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/2da7b71b-37bd-4b0a-8464-ec6e6b67eed3">
+<img width="715" alt="Screenshot 2024-04-27 at 11 18 17 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/467976b8-09c8-4d36-b979-f36d0466b523">
+
+<h1> Day 3 - Combinational and sequential optimizations </h1>
+
+
 <h1> Day 4 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch</h1> 
 
 GLS refers to running simulation on the netlist of a fiven RTL design. The idea behind this is than the netlist is logically same as that of the RTL code. 
