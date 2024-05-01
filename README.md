@@ -136,6 +136,36 @@ Now For Sequential Logic Optimization,we focus on reducing the complexity and im
 <img width="952" alt="Screenshot 2024-04-30 at 6 09 06 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1c900a9a-5b92-41c9-861a-563afc708263">
 <img width="954" alt="Screenshot 2024-04-30 at 6 50 53 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/6f2ed028-04ce-4e55-9e9b-453f12260cba">
 
+Now Let us move to labs.
+
+<img width="682" alt="Screenshot 2024-04-27 at 4 38 11 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/016f9515-fdec-47c3-8c53-e88bbf15bfe4">
+<img width="1397" alt="Screenshot 2024-04-27 at 4 43 31 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/6812be97-79a6-46c4-9c65-ec821a7089d8">
+<img width="678" alt="Screenshot 2024-04-27 at 4 58 50 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/0e31b5b1-a35a-4ee8-a25a-025ffac71f4d">
+<img width="1434" alt="Screenshot 2024-04-27 at 5 00 17 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/f32d51c8-d66c-4cc6-857f-c75dbb78c3da">
+<img width="716" alt="Screenshot 2024-04-27 at 5 02 33 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/27539824-99b8-425a-beda-e9188cc71ae1">
+<img width="716" alt="Screenshot 2024-04-27 at 5 03 37 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/396073fb-b22b-4502-9a5a-f42b60103249">
+<img width="1433" alt="Screenshot 2024-04-27 at 5 04 21 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/a2c3ad89-ebb9-4ad8-a20c-bc90c70756af">
+<img width="1433" alt="Screenshot 2024-04-27 at 5 15 29 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/957e284b-2737-4196-8c7e-195ee6231658">
+<img width="1433" alt="Screenshot 2024-04-27 at 5 40 23 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/efde9418-a681-456a-8ce8-8c5447dbfb6a">
+<img width="1433" alt="Screenshot 2024-04-27 at 5 43 57 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/5791b3d2-fab9-473c-8303-6e2d91f3040a">
+<img width="1433" alt="Screenshot 2024-04-27 at 5 53 09 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/9e3fab85-8d8e-48cf-a9bd-833f19241a7d">
+<img width="1433" alt="Screenshot 2024-04-27 at 5 58 46 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/18593c91-98f0-40d2-ae64-b1137433514c">
+<img width="1433" alt="Screenshot 2024-04-27 at 6 06 50 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/d1837ead-8e58-4fce-bd25-8c26b042dd4e">
+<img width="1433" alt="Screenshot 2024-04-27 at 6 13 07 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/8cbaebe4-1071-4c65-bfb4-e0ee4b3c3722">
+<img width="1433" alt="Screenshot 2024-04-27 at 6 15 16 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/79ce449d-b3ee-4918-938e-671bea1dc52f">
+<img width="1433" alt="Screenshot 2024-04-27 at 6 20 15 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/d8d73d96-155e-42c3-a5ec-689f64da7fab">
+<img width="1433" alt="Screenshot 2024-04-27 at 6 22 10 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/c8fd7d91-82d9-48e4-aee0-ec1e15dcf447">
+<img width="1433" alt="Screenshot 2024-04-27 at 6 23 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/79ddcd58-81b7-4806-a575-40ef6656d1f1">
+<img width="716" alt="Screenshot 2024-04-27 at 6 23 34 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/a927d4c8-451f-49fa-bbea-e8ede0302e09">
+<img width="1434" alt="Screenshot 2024-04-27 at 6 24 15 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/2fdc6774-4063-4fdf-8a67-b7823d9f894c">
+<img width="1434" alt="Screenshot 2024-04-27 at 6 27 13 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/c0874c35-9fba-40f4-beb8-6183e945c4e6">
+<img width="718" alt="Screenshot 2024-04-27 at 6 31 05 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ea6fc280-4b77-461a-9a29-cea224faad3d">
+<img width="718" alt="Screenshot 2024-04-27 at 6 32 51 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/526af4c4-1ccf-43a5-ae81-2cfbe3c40510">
+<img width="659" alt="Screenshot 2024-04-27 at 7 05 14 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/d7fff40b-37d4-4201-9c03-1ce387d3ca56">
+<img width="1434" alt="Screenshot 2024-04-27 at 7 09 45 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ff6a6836-9de7-4183-a312-1a885c27f70f">
+<img width="595" alt="Screenshot 2024-04-29 at 2 02 00 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/236f3fe4-652c-4119-abd5-48dabe398d4c">
+<img width="1422" alt="Screenshot 2024-04-29 at 2 04 23 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/6eccceef-177a-4c0e-b216-ded8979f18e4">
+
 
 <h1> Day 4 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch</h1> 
 
@@ -144,6 +174,7 @@ We perform GLS to verify the logical correctness of the design.
 The resons for this could be Improper sensitivity list or incorrect use of blocking statements.
 
 <img width="1026" alt="Screenshot 2024-04-29 at 2 44 13 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/83cd7dd3-b8ea-4b5b-ac12-82abded46780">
+<img width="1026" alt="Screenshot 2024-04-29 at 2 58 06 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1f7f3660-80c1-41c0-9b18-7e3fdfdfab67">
 <img width="1026" alt="Screenshot 2024-04-29 at 2 58 06 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/59f62df7-87e0-4c92-9125-e2b8cfb4ef47">
 <img width="1026" alt="Screenshot 2024-04-29 at 3 13 30 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/40caaf52-9b5d-4eca-9ddb-d62d5f3554f4">
 <img width="1026" alt="Screenshot 2024-04-29 at 3 23 43 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/0875fd54-40c7-49b6-9d44-5ab7c2609369">
