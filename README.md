@@ -114,15 +114,27 @@ Now let us move to labs
 <img width="675" alt="Screenshot 2024-04-27 at 3 02 46 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/b693b99d-1fd9-40a6-9b8c-824f0760e889">
 <img width="675" alt="Screenshot 2024-04-27 at 3 06 45 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1f272aef-d8b5-44be-b92f-1f2c11b023eb">
 
-
-
-
-
-
-
-
-
 <h1> Day 3 - Combinational and sequential optimizations </h1>
+
+Combinational logic optimization is a critical aspect of digital circuit design aimed at reducing the complexity and improving the efficiency of combinational logic circuits.
+<img width="925" alt="Screenshot 2024-04-30 at 6 00 22 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/3aa6f07b-f264-4057-bd21-298c77dc5b7a">
+In Our Labs we are Primarily focused on Optimization usingConstant Propogation 
+<img width="925" alt="Screenshot 2024-04-30 at 6 01 30 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/6177ba3b-1f08-4907-b445-ec2343c42083">
+
+Boolean logic optimization is the process of simplifying Boolean expressions to achieve better performance, reduced complexity, and minimized resources. In this case 
+<img width="925" alt="Screenshot 2024-04-30 at 6 02 45 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/7bcdd3a9-31c1-4ee6-9dd4-dba6ebbc1dde">
+
+In Our Labs We have tried to Perform both Combinational Logic Optimizations as well as Sequential Logic Optimizations.
+
+Using multiplexers (muxes) for combinational logic optimization involves selecting between multiple inputs based on control signals. Muxes can simplify complex logic functions, enable conditional execution, and facilitate data width conversion within a circuit.
+<img width="455" alt="Screenshot 2024-04-30 at 6 12 48 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/d1adbb8b-b5aa-46b7-ba2d-8bdd6f0e2cd0">
+<img width="455" alt="Screenshot 2024-04-30 at 6 18 38 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/f4b69447-e196-47ba-8280-76d261f55167">
+Now For Sequential Logic Optimization,we focus on reducing the complexity and improving the performance of circuits that incorporate memory elements, such as flip-flops or latches. Techniques include minimizing the number of state variables, reducing the number of clock cycles required to complete operations, and optimizing the state transition logic.
+
+<img width="925" alt="Screenshot 2024-04-30 at 6 04 17 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/0531b97b-d17e-4da9-8732-3c0b203c4a51">
+<img width="952" alt="Screenshot 2024-04-30 at 6 11 35 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/d184a358-13d4-4c7c-add2-8fee1cfd2c07">
+<img width="952" alt="Screenshot 2024-04-30 at 6 09 06 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1c900a9a-5b92-41c9-861a-563afc708263">
+<img width="954" alt="Screenshot 2024-04-30 at 6 50 53 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/6f2ed028-04ce-4e55-9e9b-453f12260cba">
 
 
 <h1> Day 4 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch</h1> 
