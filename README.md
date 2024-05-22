@@ -198,3 +198,40 @@ Now let us take a look at lab outcomes. We first take a look at the outcomes for
 <img width="609" alt="Screenshot 2024-04-30 at 12 01 54 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/bdc1fb04-ae6a-4457-a254-d8c21d3b3a92">
 <img width="1440" alt="Screenshot 2024-04-30 at 12 11 37 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/c5e9f2fb-9a55-4a39-9f4b-c3643f099a45">
 <img width="944" alt="Screenshot 2024-04-30 at 12 12 52 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/3dc22062-6c48-4bbf-9a0c-9fcf0191d474">
+
+<h1> Day-7 - Basics of STA </h1> 
+
+In this Lab we will be diving deeper into Timing Dot libs. timing dot libs contain information on various aspects of cells such as functionality, input pins, output pins, area, leakage current etc.
+
+First let us know some basic commands to get lib cells namely "get_lib_cells"
+
+<img width="1174" alt="Screenshot 2024-05-12 at 9 10 15 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/af7aeba7-d0a1-4088-ba93-8cdec1ff1cab">
+
+We now observe a pos-latch and a neg-latch. For pos-latch, the setup time is wrt to falling edge while for neg-latch setup-time is wrt to rising edge.
+<img width="642" alt="Screenshot 2024-05-12 at 9 37 20 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/3d985e54-d900-48bd-a574-e60ac15507c2">
+<img width="642" alt="Screenshot 2024-05-12 at 9 37 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1c0d69f4-06bc-4cad-ab27-a521bf9dc643">
+
+We will now loop over all the and cells present in the library 
+<img width="1159" alt="Screenshot 2024-05-21 at 4 00 06 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/97d10e95-d18e-4794-9bb6-1b18ae2b1f5b">
+
+We now try getting attribute name of the cells
+
+<img width="1159" alt="Screenshot 2024-05-21 at 4 00 06 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/691b5733-9887-4d35-9206-799060772301">
+
+We will now write this tcl script into a file and try to source it
+
+<img width="1005" alt="Screenshot 2024-05-21 at 1 54 54 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/0c640b81-5d65-4711-90ec-7cbaf9621132">
+
+<img width="1121" alt="Screenshot 2024-05-21 at 2 09 08 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ab99f86a-446a-481a-91c3-096469dc9392">
+
+We now try to find out various atributes of cells such as area, capacitance , clock etc.
+
+<img width="1121" alt="Screenshot 2024-05-21 at 2 18 36 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/6c9c1d39-d8d5-4b5f-a10f-09395b8aae02">
+
+<img width="1121" alt="Screenshot 2024-05-21 at 4 51 41 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/79741573-feac-40ad-8600-1fdb63cbf53d">
+
+<img width="1331" alt="Screenshot 2024-05-21 at 4 53 33 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1a6f548f-c303-418b-83ad-6cef0230d0ab">
+
+
+
+
