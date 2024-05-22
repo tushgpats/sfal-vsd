@@ -199,6 +199,16 @@ Now let us take a look at lab outcomes. We first take a look at the outcomes for
 <img width="1440" alt="Screenshot 2024-04-30 at 12 11 37 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/c5e9f2fb-9a55-4a39-9f4b-c3643f099a45">
 <img width="944" alt="Screenshot 2024-04-30 at 12 12 52 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/3dc22062-6c48-4bbf-9a0c-9fcf0191d474">
 
+<h1>Day-6 Introduction to Logic Synthesis</h1>
+
+Logic synthesis involves using TCL scripts to automate and control the synthesis process in digital design.
+
+Let us start by some basics of tcl scripting with for loop.It is important to note that tcl is a strongly typed language.
+<img width="736" alt="Screenshot 2024-05-10 at 6 34 26 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/7db3a653-8eb7-4981-9e00-0f53bf82bdc4">
+
+now let us take a look at while loop in tcl
+<img width="736" alt="Screenshot 2024-05-10 at 7 20 59 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/613f0585-be06-4cc9-b5f5-c0410f52af3a">
+
 <h1> Day-7 - Basics of STA </h1> 
 
 In this Lab we will be diving deeper into Timing Dot libs. timing dot libs contain information on various aspects of cells such as functionality, input pins, output pins, area, leakage current etc.
