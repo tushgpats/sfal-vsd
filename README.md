@@ -199,6 +199,90 @@ Now let us take a look at lab outcomes. We first take a look at the outcomes for
 <img width="1440" alt="Screenshot 2024-04-30 at 12 11 37 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/c5e9f2fb-9a55-4a39-9f4b-c3643f099a45">
 <img width="944" alt="Screenshot 2024-04-30 at 12 12 52 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/3dc22062-6c48-4bbf-9a0c-9fcf0191d474">
 
+<h1> Day-5 Introduction to DFT </h1>
+
+There are various issues that one might encounter while manufacturing chips such as such as density issues, where increased miniaturization leads to a higher likelihood of design errors like wires touching or breaking. Software issues can also arise from bugs in the computer-aided design (CAD) tools used in the chip design process. Application-specific issues are critical in fields like healthcare and aerospace, where a single fault can have catastrophic consequences. Additionally, maintenance challenges become more complex with the reduction in PCB sizes and the shift towards system-on-chip (SoC) designs, making traditional testing methods less effective and repairs more costly. Lastly, business implications are significant, as the discovery of faults in chips can result in substantial financial losses and penalties for the manufacturing company. Detecting these faults early is essential to mitigate costs and ensure reliability in the production of chips.
+
+<h2> Why Do We Do DFT? </h2>
+DFT is implemented primarily to make testing feasible and efficient after a chip has been fabricated. It addresses several key needs:
+
+Ease of Testing: DFT techniques simplify the detection and localization of manufacturing defects across various testing stages. This helps ensure that the chip meets the required quality and reliability standards before it is shipped.
+<img width="1181" alt="Screenshot 2024-05-25 at 2 50 22 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ce72583f-afb6-4ff5-b7ce-5c2565348742">
+
+Economic Benefits: Implementing DFT reduces the cost associated with testing and repairing defective chips. Without DFT, identifying defects at the microscopic level would be more time-consuming and costly.
+
+Market Needs: In a competitive market, reducing time-to-market is crucial. DFT helps in speeding up the testing phase, thereby allowing quicker market entry.
+
+Levels of Testing:
+DFT is essential across different levels of testing after a chip is fabricated:
+
+Chip-Level or Die-Level Testing: This initial testing phase occurs at the foundry where the chip is manufactured. It ensures that the chip itself is free from defects before it is assembled onto boards.
+
+Board-Level Testing: After the chips are mounted on boards, it’s necessary to test them in the context of other integrated modules. This ensures that the chip functions correctly within its intended environment.
+
+System-Level Testing: This final stage of testing involves checking the complete systems, such as laptops or other devices, in which multiple boards are assembled. It confirms that all components work harmoniously.
+
+Inclusion of DFT in ASIC Design Flow:
+DFT is incorporated early in the ASIC design process to ensure that the design is testable and manufacturable:
+
+<h2> When and Where is DFT Included </h2>
+When is it included? - DFT is included at the very beginning of the ASIC design flow. It’s considered right from the initial stages to integrate testability seamlessly into the chip design.
+
+Where is it included? - DFT is incorporated during the synthesis phase of the front-end design. This involves embedding test structures and methodologies into the chip's design to facilitate easier and more effective testing post-manufacture.
+
+<h2> Pro's and Cons of DFT </h2>
+<img width="1181" alt="Screenshot 2024-05-25 at 2 42 06 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/93a08559-f537-4b2a-884a-03b56e2fdc82">
+
+<h2> Basic Terminologies </h2>
+In DFT, controllability refers to the ability to set and observe each node in a circuit at both logic high and low states via scan chains. To improve controllability, additional elements like multiplexers (MUXes) might be added, allowing flexible test signal routing. However, while enhancing test coverage, this approach increases the chip's area, power consumption, and can impact timing, collectively affecting the Power, Performance, and Area (PPA) metrics.
+For example, consider a situation where a specific node within a microprocessor design, let's call it Node1, is not directly accessible by standard test mechanisms due to its placement deep within a complex logic gate arrangement. To address this, a multiplexer (MUX) is added to the design to allow Node1 to be alternately connected to either the operational logic path or a scan chain. This MUX enables both '0' and '1' values to be driven to and observed from Node1 during testing, significantly improving the controllability of this node, albeit at the cost of slightly increased chip area and power consumption.
+<img width="1181" alt="Screenshot 2024-05-25 at 3 12 23 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/56ffcffd-2ddb-41b5-86bb-b0499c5cb680">
+
+Observability in DFT refers to the ability to detect and measure the state of a logic signal at specific nodes within a circuit during testing. A node is considered observable if its value can be captured and then shifted out through scan chains, allowing it to be examined via scan output patterns. For instance, to make Node1 observable in a given circuit design, a flip-flop could be added specifically for capturing the node's state during test modes. While this addition increases the area and power usage of the chip, it does not impact timing since the flip-flop is not on the critical signal path, ensuring that operational speeds are maintained.
+<img width="1181" alt="Screenshot 2024-05-25 at 3 13 14 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/f4d624c9-d54f-45b0-b5ea-d90e26a6d80a">
+
+Fault: A fault represents physical damage or a defect within a system, differing from its intended design. This physical anomaly does not necessarily lead to a system malfunction but has the potential to cause one.
+
+Error: An error occurs when a fault influences the system, pushing it into an erroneous state. This is a direct consequence of a fault affecting the system's operational behavior.
+
+Failure: A failure happens when the system ceases to deliver the expected service or functionality, typically observed when an error impacts critical system operations.
+
+Fault Coverage: This is the metric used to express the percentage of all possible logical faults within a system that can be detected by a specific set of tests, denoted as test set T.
+
+Defect Level: This measures the proportion of defective parts that are inadvertently shipped as functioning units. It reflects the number of faulty chips that were not detected during testing and were erroneously classified as good.
+
+<h2> DFT Techniques </h2>
+<img width="1188" alt="Screenshot 2024-05-25 at 3 41 29 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/cb1198e8-afda-48ca-a357-6cd627b6bda0">
+
+The DFT compiler converts the flops to scan-enabled flops.
+<img width="1188" alt="Screenshot 2024-05-25 at 3 49 04 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/ab41ec09-d7fd-45bb-a964-c2cbb106a170">
+Scan Chain Techniques
+
+Define the scan constraints
+Establish scan ports and scan enable settings
+Compile the Design for Test (DFT)
+Determine the number of scan chains
+
+<img width="1188" alt="Screenshot 2024-05-25 at 3 54 00 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/d6428808-282b-4eb2-a1fa-bda2b93b484c">
+
+Scan flops are primarily used for two key purposes in testing manufactured devices:
+
+Testing for Stuck-at Faults: Scan flops help in identifying stuck-at faults where a pin or a node in the device remains fixed at a high ('1') or low ('0') value and does not change as expected during circuit operation. This helps in ensuring that all parts of the circuit can correctly transition between states.
+
+Testing Path Delays: They are used to verify that each path in the device operates at its functional frequency. This involves checking whether signals can travel through the circuit within the expected time limits without causing delays that could impact the device's performance.
+
+<img width="1157" alt="Screenshot 2024-05-25 at 4 06 22 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/33642fa7-972c-4c00-89ac-c0f42d76c213">
+<img width="1189" alt="Screenshot 2024-05-25 at 4 09 57 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/e5131e54-f69e-4240-a3d9-27ea254a3cd8">
+ Why do we use APTG 
+ <img width="1189" alt="Screenshot 2024-05-25 at 4 11 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/0e8ff408-5a39-466b-9483-88e0d1b7edb3">
+<img width="1189" alt="Screenshot 2024-05-25 at 4 11 52 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/f7411368-8d3f-48cb-acf5-9a17c10fa959">
+<img width="1189" alt="Screenshot 2024-05-25 at 4 21 17 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/9927e9f0-a6b1-494d-a062-b09dba6c11f5">
+
+<h2> Synopsys DC </h2>
+<img width="1440" alt="Screenshot 2024-04-30 at 7 37 10 PM gui start" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/7bfdf2e5-085d-4a92-b6d3-29904d8b47a6">
+<img width="829" alt="Screenshot 2024-05-25 at 3 32 37 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/be930959-8f2d-42b0-a807-17020b761300">
+
+
 <h1>Day-6 Introduction to Logic Synthesis</h1>
 
 Logic synthesis involves using TCL scripts to automate and control the synthesis process in digital design.
