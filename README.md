@@ -363,6 +363,12 @@ We now try to find out various atributes of cells such as area, capacitance , cl
 
 <img width="1331" alt="Screenshot 2024-05-21 at 4 53 33 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1a6f548f-c303-418b-83ad-6cef0230d0ab">
 
+<h1> Day-8 - Advanced SDC Constraints </h1>
 
-
+Now we will take a look at how to load design, get cells, ports and nets. 
+<img width="684" alt="Screenshot 2024-05-21 at 1 38 07 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/712048c9-ed3b-48d9-a217-a4e5d6cee80b">
+<img width="1005" alt="Screenshot 2024-05-21 at 1 54 54 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/f2fe7a24-cd8d-4f0b-8db1-3e240273e621">
+<img width="1121" alt="Screenshot 2024-05-21 at 2 09 08 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/4796e635-580f-4c53-87dc-1ac06b7d0c8d">
+<img width="1168" alt="Screenshot 2024-05-21 at 3 19 52 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/a225b697-9d58-436d-9f81-03e4188742be">
+<img width="1159" alt="Screenshot 2024-05-21 at 3 45 24 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/acbf1d59-30a7-4bf9-ba59-efd592f0a1e4">
 
