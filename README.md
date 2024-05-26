@@ -372,3 +372,35 @@ Now we will take a look at how to load design, get cells, ports and nets.
 <img width="1168" alt="Screenshot 2024-05-21 at 3 19 52 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/a225b697-9d58-436d-9f81-03e4188742be">
 <img width="1159" alt="Screenshot 2024-05-21 at 3 45 24 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/acbf1d59-30a7-4bf9-ba59-efd592f0a1e4">
 
+getting pins
+<img width="1159" alt="Screenshot 2024-05-21 at 4 10 02 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1d3e85c4-9510-464c-8493-e9fa7fafdea0">
+<img width="1159" alt="Screenshot 2024-05-21 at 4 35 55 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/97a2c730-fc1b-4de7-96d0-931d6c4a84d9">
+
+getting various attributes of pins 
+<img width="1121" alt="Screenshot 2024-05-21 at 4 51 41 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/40f86452-f06a-45a6-8379-88c8649fafc2">
+<img width="1331" alt="Screenshot 2024-05-21 at 4 53 33 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/958d9da8-cd5e-48e2-b6a9-91f3ec5dcae1">
+
+linking the design in DC shell
+<img width="1120" alt="Screenshot 2024-05-21 at 5 33 08 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/79053fb2-080a-466e-8eb9-18956be9fd4d">
+<img width="1120" alt="Screenshot 2024-05-21 at 5 35 43 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/68ff123e-bebe-4714-8919-68a7ea1b85f7">
+<img width="1120" alt="Screenshot 2024-05-21 at 5 40 37 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/784d5c4e-d7a9-4645-b188-32eee8421345">
+
+getting ports
+<img width="1120" alt="Screenshot 2024-05-21 at 6 06 28 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/921bd1c4-9c67-432e-bcee-27e6b5d4b24a">
+<img width="1371" alt="Screenshot 2024-05-23 at 4 56 27 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/6f5805ff-e0ed-46cf-9d7a-996a2b940d1d">
+
+Getting pins and their attributes
+<img width="903" alt="Screenshot 2024-05-23 at 4 57 20 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/5d2b3aab-35be-4de5-8970-72db7f810722">
+<img width="1317" alt="Screenshot 2024-05-23 at 5 10 45 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/d80b81bf-ad35-4546-887d-e548c6e8f7ca">
+<img width="1321" alt="Screenshot 2024-05-23 at 5 38 53 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/0358ff48-c557-4db3-8ba0-153c93f0302c">
+<img width="1106" alt="Screenshot 2024-05-23 at 5 50 27 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/80c894bd-6520-40c6-891a-0c3d3b80e967">
+<img width="1106" alt="Screenshot 2024-05-23 at 6 07 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/1baf10c3-446d-4c7b-82ee-cff649ac64a5">
+<img width="1106" alt="Screenshot 2024-05-23 at 6 21 42 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/3ef0558d-5609-497d-91ad-a167b68197e4">
+Screenshot 2024-05-23 at 6.39.38 PM
+
+We now take a look at how to create clocks
+<img width="755" alt="Screenshot 2024-05-23 at 10 57 50 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/f5da5b9d-a872-4776-af5d-75e1ac432335">
+<img width="915" alt="Screenshot 2024-05-23 at 11 33 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/3249943f-318a-412b-b048-3b4d1facf959">
+<img width="915" alt="Screenshot 2024-05-23 at 11 43 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/045f961d-7f29-4262-93e8-f85681918cf5">
+
+We will now dive deep into Clock network modellling and IO Delays.
