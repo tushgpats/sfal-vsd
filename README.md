@@ -285,6 +285,31 @@ Testing Path Delays: They are used to verify that each path in the device operat
 
 <h1>Day-6 Introduction to Logic Synthesis</h1>
 
+Now we link the design into the DC shell.
+<img width="808" alt="Screenshot 2024-05-07 at 5 08 57 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/5baf4b1c-dca3-4035-b357-7fbab4677b28">
+
+<img width="840" alt="Screenshot 2024-05-09 at 3 29 36 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/e01a3e27-77e7-498f-a626-0175dc8474b0">
+this is the verilog file of the design 
+
+<img width="1173" alt="Screenshot 2024-05-09 at 3 56 10 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/011efb96-e805-4441-99ed-01eb287e4d77">
+The DC compliler infers a Memory device which overer here is a register.
+
+we will now how to linkl the library files bcoz the dc compliler only understands the db format.
+<img width="980" alt="Screenshot 2024-05-09 at 5 02 51 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/2901b0e4-63b0-46b1-8730-3dbd0f15c2e0">
+<img width="1385" alt="Screenshot 2024-05-09 at 5 30 17 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/836b3df3-615c-482e-8aa9-37e5c5b0f8c3">
+
+on compliling the design we get.
+<img width="1173" alt="Screenshot 2024-05-09 at 3 58 36 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/718f2f16-4c9d-43fb-a57e-d42761605dc2">
+
+We now write the ddc file so that we can view it in the DC compliler.
+<img width="1173" alt="Screenshot 2024-05-09 at 4 45 56 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/86ae5f77-8b7a-492c-a672-ab64af147663">
+<img width="1440" alt="Screenshot 2024-05-09 at 4 53 05 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/7fc8c39d-5ebc-4fdd-b957-6ab5bdd8dcbd">
+
+We can now load the design and view it.
+<img width="1175" alt="Screenshot 2024-05-09 at 4 56 54 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/c2c8d272-142d-457d-92e2-4cd577e0cf86">
+<img width="1175" alt="Screenshot 2024-05-09 at 4 58 27 AM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/a9993689-5d37-45dc-af47-1cd57479cdc9">
+
+
 Logic synthesis involves using TCL scripts to automate and control the synthesis process in digital design.
 
 Let us start by some basics of tcl scripting with for loop.It is important to note that tcl is a strongly typed language.
@@ -292,6 +317,18 @@ Let us start by some basics of tcl scripting with for loop.It is important to no
 
 now let us take a look at while loop in tcl
 <img width="736" alt="Screenshot 2024-05-10 at 7 20 59 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/613f0585-be06-4cc9-b5f5-c0410f52af3a">
+
+Now let us make a list and loop through the list.
+<img width="736" alt="Screenshot 2024-05-10 at 7 42 57 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/0219ff50-9b81-4145-9ed4-bbebb1d30299">
+
+Now we loop through all the lib cells. 
+
+<img width="736" alt="Screenshot 2024-05-10 at 7 54 40 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/d661bd2b-a051-4c56-9bd2-01c8ee0194ca">
+<img width="736" alt="Screenshot 2024-05-10 at 8 02 14 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/b8951f33-232c-48d0-8476-23266b72772f">
+
+We now try print the multiplication table to get idea of loop nested while inside a foreach which will be useful for later labs.
+
+<img width="1293" alt="Screenshot 2024-05-10 at 8 32 44 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/b47e4a23-f425-418b-9dfd-d18d069b789a">
 
 <h1> Day-7 - Basics of STA </h1> 
 
