@@ -432,3 +432,27 @@ Simulating a chip design at different PVT corners is critical for several reason
 1. It Ensures that the chip will operate correctly under a wide range of conditions.
 2. It Verifies that the chip meets timing requirements across all PVT variations.
 3. It Helps in analyzing the trade-offs between power consumption and performance under different conditions.
+
+<h2> Lab <h2>
+We will now synthesize BabySoC design utilizing different PVT Corner library files (.lib/.db). We will then tabulate Worst Negative/Setup Slack (WNS) & Worst Hold Slack (WHS) values 
+First We Do this for a single Corner.
+First we download the Skywater 130nm PDK timing libraries for different PVTs  to the path /home/ganesh/VSDBabySoC/src/timing_libs
+
+Now to convert all the .lib  file formats to .db format execute the following steps :
+cd /home/ganesh/VSDBabySoC/src/timing_libs
+lc_shell # Invoke lc_shell tool
+We use the following script to convert all .lib to .db file format within timing_libs directory. 
+
+```
+$ set libs [glob *.lib]
+$  set m1 ""
+$  set library_name ""
+$  foreach lib_name $libs {
+$   
+$  regexp {(.*)\.lib} $lib_name m1 library_name
+$  
+$  read_lib $lib_name
+$  write_lib $library_name -format db -output ${library_name}.db
+$  }
+
+```
