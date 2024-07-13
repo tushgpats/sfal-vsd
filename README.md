@@ -433,7 +433,7 @@ Simulating a chip design at different PVT corners is critical for several reason
 2. It Verifies that the chip meets timing requirements across all PVT variations.
 3. It Helps in analyzing the trade-offs between power consumption and performance under different conditions.
 
-<h2> Lab <h2>
+<h2> Lab </h2>
 We will now synthesize BabySoC design utilizing different PVT Corner library files (.lib/.db). We will then tabulate Worst Negative/Setup Slack (WNS) & Worst Hold Slack (WHS) values 
 First We Do this for a single Corner.
 First we download the Skywater 130nm PDK timing libraries for different PVTs  to the path /home/ganesh/VSDBabySoC/src/timing_libs
@@ -456,3 +456,40 @@ $  write_lib $library_name -format db -output ${library_name}.db
 $  }
 
 ```
+We now Synthesize the BabySoC Design for different PVT Corners 
+We create a sta_mul_pvt.tcl file and put the following script to synthesize the BabySoC design with different PVT Corners and also report the corresponding Worst Negative/Setup Slack (WNS) & Worst Hold  Slack (WHS) into a .rpt file.
+```
+$   set m1 ""
+$   set pvt ""
+$   set FH [open report_timing.rpt w]
+$   puts $FH "PVT_Corner\tWNS\tWHS"
+$   
+$   set lib_files [glob -directory /home/subhasis/VSDBabySoC/src/timing_libs/ -type f *.db]
+$   
+$   foreach lib_file_paths $lib_files   
+$   regexp {.*\/sky130_fd_sc_hd__(.*)\.db$} $lib_file_paths m1 pvt
+$   
+$   set timing_report_fast_mode true
+$   
+$   
+$   set target_library $lib_file_paths
+$   set link_library {* /home/subhasis/VSDBabySoC/src/lib/avsdpll.db /home/subhasis/VSDBabySoC/src/lib/avsddac.db}
+$   lappend link_library $target_library
+$   set search_path {/home/subhasis/VSDBabySoC/src/include /home/subhasis/VSDBabySoC/src/module}
+$   read_file {sandpiper_gen.vh  sandpiper.vh  sp_default.vh  sp_verilog.vh clk_gate.v rvmyth.v rvmyth_gen.v vsdbabysoc.v} -autoread -top vsdbabysoc
+$   source /home/subhasis/VSDBabySoC/src/sdc/vsdbabysoc_synthesis.sdc
+$   link
+$   compile_ultra
+$   
+$   set wns [get_attribute [get_timing_paths -delay_type max -max_paths 1] slack]
+$   set whs [get_attribute [get_timing_paths -delay_type min -max_paths 1] slack]
+$   
+$   puts $FH "$pvt\t$wns\t$whs"
+$   
+$   reset_design
+$   }
+$   
+$   close $FH
+```
+<h2> PVT Corners in Tablular Form </h2>
+<img width="763" alt="Screenshot 2024-07-12 at 4 26 19 PM" src="https://github.com/user-attachments/assets/3e9ba184-b95c-4575-b2cb-e2acf40cf420">
