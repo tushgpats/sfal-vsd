@@ -404,3 +404,31 @@ We now take a look at how to create clocks
 <img width="915" alt="Screenshot 2024-05-23 at 11 43 01 PM" src="https://github.com/tushgpats/sfal-vsd/assets/47535296/045f961d-7f29-4262-93e8-f85681918cf5">
 
 We will now dive deep into Clock network modellling and IO Delays.
+
+
+
+
+
+<h1> Day 14 PVT Corners: Synthesis and Timing Analysis </h1>
+
+The Term PVT Stands for Process Voltage and Tempreture. PVT (Process, Voltage, and Temperature) variations significantly impact the delay and overall performance of semiconductor devices. In order to ensure that out chip to works after fabrication in all the possible conditions, we run simulations at different corners of process, voltage, and temperature. 
+
+Process Variations: Process variations arise from the inherent imperfections and variations in the semiconductor fabrication process. These variations can lead to differences in the physical dimensions and electrical characteristics of transistors, such as threshold voltage, channel length, and oxide thickness. The impact on delay can be summarized as follows:
+Fast-Fast (FF) Corner: Transistors are faster due to lower threshold voltages and shorter channel lengths, leading to reduced delay.
+Slow-Slow (SS) Corner: Transistors are slower due to higher threshold voltages and longer channel lengths, resulting in increased delay.
+Typical-Typical (TT) Corner: Represents nominal process conditions and serves as a reference point.
+
+Voltage Variations
+Voltage variations refer to changes in the supply voltage, which can occur due to power supply fluctuations, voltage drops, or intentional design choices. The impact on delay is as follows:
+High Voltage (Vmax): Higher supply voltage increases the drive strength of transistors, reducing delay but potentially increasing power consumption.
+Low Voltage (Vmin): Lower supply voltage decreases the drive strength of transistors, increasing delay but potentially reducing power consumption.
+
+Temperature Variations
+Temperature variations can occur due to changes in the operating environment or self-heating effects within the chip. The impact on delay is as follows:
+High Temperature (Thigh): Higher temperatures increase carrier scattering, reducing mobility and increasing delay.
+Low Temperature (Tlow): Lower temperatures reduce carrier scattering, increasing mobility and reducing delay.
+
+Simulating a chip design at different PVT corners is critical for several reasons:
+1. It Ensures that the chip will operate correctly under a wide range of conditions.
+2. It Verifies that the chip meets timing requirements across all PVT variations.
+3. It Helps in analyzing the trade-offs between power consumption and performance under different conditions.
