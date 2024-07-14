@@ -414,6 +414,32 @@ Pre-synthesis simulation ensures that the designed logic performs the intended f
 <h2>Why Not Just Do Post-Synthesis Simulation?</h2>
 Post-synthesis simulations are significantly slower because they include detailed gate-level modeling and timing information.Debugging at the gate level is more complex and time-consuming compared to the RTL level. Thus, Identifying the root cause of functional mismatches or timing violations can be more challenging.Post-synthesis simulation focuses on verifying both functionality and timing, which can be too late to catch some high-level functional bugs that could have been detected earlier in the design cycle.
 
+<h2> Gate Level Simulation </h2>
+Gate-Level Simulation (GLS) refers to the simulation of a digital circuit at the gate level, using a netlist view that is typically generated after logic synthesis. This netlist is a detailed representation of the circuit, comprising gates and IP models with full functional and timing behavior.Gate-Level Simulation is a critical step in the digital design verification process. By providing a detailed and realistic view of the circuit post-synthesis, GLS helps verify both the functional and timing behavior of the design. It complements RTL simulation and static timing analysis, capturing dynamic behaviors and ensuring the synthesized netlist faithfully implements the intended design. 
+
+<h2> Synthesizing BabySoC </h2>
+First we need to convert .lib files for PLL and DAC to .db files using lc_shell
+```
+$cd /home/subhasis/VSDBabySoC/src/lib
+$read_lib sky130_fd_sc_hd__tt_025C_1v80.lib
+$write_lib -format db sky130_fd_sc_hd__tt_025C_1v80 -output sky130_fd_sc_hd__tt_025C_1v80.db
+```
+![WhatsApp Image 2024-06-04 at 5 53 41 PM](https://github.com/user-attachments/assets/7ed2b16f-3e8a-40d7-b187-59848e7cdc22)
+the following commands are used to synthesize BabySoC.
+<img width="1413" alt="Screenshot 2024-06-05 at 3 45 37 PM" src="https://github.com/user-attachments/assets/1f7e88f6-ee4d-4650-90f5-96fe08a8bf71">
+<img width="1413" alt="Screenshot 2024-06-05 at 11 32 24 PM" src="https://github.com/user-attachments/assets/9897598d-2846-4c9c-bd77-97bebc630ccd">
+
+We now perform Post synthesis simulation
+```
+$iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 -o ./output/post_synth_sim.out ./src/gls_model/primitives.v ./src/gls_model/sky130_fd_sc_hd.v ./output/vsdbabysoc_net.v $./src/module/avsdpll.v 
+$  ./src/module/avsddac.v ./src/module/testbench.v
+$
+$  cd output
+$  ./post_synth_sim.out
+$  gtkwave dump.vcd
+```
+<img width="1372" alt="Screenshot 2024-06-22 at 3 45 16 PM" src="https://github.com/user-attachments/assets/fba0d004-2174-4b5f-b2d8-d801f96c1ce3">
+
 <h1> Day 14 PVT Corners: Synthesis and Timing Analysis </h1>
 
 The Term PVT Stands for Process Voltage and Tempreture. PVT (Process, Voltage, and Temperature) variations significantly impact the delay and overall performance of semiconductor devices. In order to ensure that out chip to works after fabrication in all the possible conditions, we run simulations at different corners of process, voltage, and temperature. 
