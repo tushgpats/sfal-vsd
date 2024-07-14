@@ -407,7 +407,12 @@ We will now dive deep into Clock network modellling and IO Delays.
 
 
 
+<h1> Day 13 Post-Synthesis Simulation (GLS) of BabySoC </h1>
+<h2> Presynthesis Simulation </h2>
+Pre-synthesis simulation ensures that the designed logic performs the intended functionality. It allows designers to check if the design meets the initial specifications and behavioral expectations before any optimization or modification by synthesis tools.It helps in identifying and correcting logic errors, coding mistakes, and functional mismatches early in the design cycle, reducing the risk of propagating these errors to later stages.
 
+<h2>Why Not Just Do Post-Synthesis Simulation?</h2>
+Post-synthesis simulations are significantly slower because they include detailed gate-level modeling and timing information.Debugging at the gate level is more complex and time-consuming compared to the RTL level. Thus, Identifying the root cause of functional mismatches or timing violations can be more challenging.Post-synthesis simulation focuses on verifying both functionality and timing, which can be too late to catch some high-level functional bugs that could have been detected earlier in the design cycle.
 
 <h1> Day 14 PVT Corners: Synthesis and Timing Analysis </h1>
 
