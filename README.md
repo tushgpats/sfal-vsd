@@ -549,28 +549,41 @@ https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html#
 
 <h2> Run Synthesis on picorv32a design using openlane flow, generate output and analyse results by determining flop ratio </h2>
 
+ Change directory to /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane
+ set alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u
+ Invoke Openlane using 'docker' command
+ Run Openlane flow in interactive mode using following command: ./flow.tcl -interactive
 <img width="583" alt="Screenshot 2024-07-19 194312" src="https://github.com/user-attachments/assets/6bf20e7d-1d72-46b0-9a62-e79a2b9f7d53">
 
 <img width="762" alt="Screenshot 2024-07-19 210635" src="https://github.com/user-attachments/assets/37aa3685-230f-4b82-bb8c-09f1755e42da">
-
+Input required package for openlane flow, prep the design and then run synthesis
+package require openlane 0.9 #inputs required package for openlane flow
+prep -design picorv32a #prepares the picorv32a design for openlane flow
+run_synthesis #run synthesis for the prepared design
 <img width="763" alt="Screenshot 2024-07-19 214230" src="https://github.com/user-attachments/assets/cfed245c-a799-40ce-a6ea-e24aa2371a05">
 
 <img width="767" alt="Screenshot 2024-07-19 220251" src="https://github.com/user-attachments/assets/e3736336-2a62-4e5e-9a52-0aefb7fa3b37">
-
+We now Chartacterize the synthesis results
 <img width="770" alt="Screenshot 2024-07-19 225454" src="https://github.com/user-attachments/assets/d0252552-37ab-4fa4-bad9-231421de1567">
+Flop Ratio = (Total no.of DFF’s)/(Total no.of Standard Cells)=1613/14876=0.10843
 
 <h2> Running Floorplan P&R for the synthesized design </h2>
 
+After synthesis of 'picorv32a' design is completed we edit "/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/sky130A_sky130_fd_sc_hd_config.tcl" and add your desired floorplan options regarding values of core utilization,aspect ratio,IO metal layer used,core to die offset margin etc.,which would override the default values present in "/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/configuration/floorplan.tcl". The description of different variables used in the flow at different stages is present "/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/configuration/README.md" file
+README.md file describing variables used in flow:
 <img width="764" alt="Screenshot 2024-07-20 151354_day2" src="https://github.com/user-attachments/assets/f539082a-3fea-49db-8231-5d34cedb5e9e">
 
+floorplan.tcl file
 <img width="762" alt="Screenshot 2024-07-20 155106_day2" src="https://github.com/user-attachments/assets/20a656ee-54cc-4ab3-b0c7-253dfa9a3816">
-
+floorplan values for current design
 <img width="762" alt="Screenshot 2024-07-20 155555_day2" src="https://github.com/user-attachments/assets/ca8cb0b0-55e4-495a-b6e2-50d347a00858">
-
+run_floorplan # runs floorplan for current synthesized design,with floorplan values set in config.tcl file for the current design
 <img width="765" alt="Screenshot 2024-07-20 155908_day2" src="https://github.com/user-attachments/assets/91b107cf-1ea6-46cd-9216-b8ca6d2cebab">
-
+Calculating Die Area
 <img width="764" alt="Screenshot 2024-07-22 140736_day2" src="https://github.com/user-attachments/assets/3050f9b3-37d6-48cd-ab8a-cfa38d4444b2">
+Die Area in µm^2 = (507.125 * 517.935) µm^2 = 262657.786 µm^2 according to the given def file
 
+Loading generated floorplan.def in magic tool and exploring it
 <img width="662" alt="Screenshot 2024-07-22 235923_day2" src="https://github.com/user-attachments/assets/14151852-edee-44ba-87ff-a6083b87941c">
 
 <img width="704" alt="Screenshot 2024-07-23 000436_day2" src="https://github.com/user-attachments/assets/0cbc32df-6482-4a30-ba76-e663da2c80f7">
