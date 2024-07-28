@@ -546,3 +546,50 @@ Flexibility and extensibility: OpenLane is designed to be flexible and extensibl
 Open source: OpenLane is an open-source project that is freely available to use and modify, which makes it a good choice for designers looking for a transparent, cost-effective solution.
 Community support: OpenLane capitalizes on OpenLane’s existing community of users and contributors, which means that a wealth of resources is available to help designers get started and troubleshoot any problems they encounter.
 https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html#newcomers
+
+<h2> Run Synthesis on picorv32a design using openlane flow, generate output and analyse results by determining flop ratio </h2>
+
+<img width="583" alt="Screenshot 2024-07-19 194312" src="https://github.com/user-attachments/assets/6bf20e7d-1d72-46b0-9a62-e79a2b9f7d53">
+
+<img width="762" alt="Screenshot 2024-07-19 210635" src="https://github.com/user-attachments/assets/37aa3685-230f-4b82-bb8c-09f1755e42da">
+
+<img width="763" alt="Screenshot 2024-07-19 214230" src="https://github.com/user-attachments/assets/cfed245c-a799-40ce-a6ea-e24aa2371a05">
+
+<img width="767" alt="Screenshot 2024-07-19 220251" src="https://github.com/user-attachments/assets/e3736336-2a62-4e5e-9a52-0aefb7fa3b37">
+
+<img width="770" alt="Screenshot 2024-07-19 225454" src="https://github.com/user-attachments/assets/d0252552-37ab-4fa4-bad9-231421de1567">
+
+<h2> Running Floorplan P&R for the synthesized design </h2>
+
+<img width="764" alt="Screenshot 2024-07-20 151354_day2" src="https://github.com/user-attachments/assets/f539082a-3fea-49db-8231-5d34cedb5e9e">
+
+<img width="762" alt="Screenshot 2024-07-20 155106_day2" src="https://github.com/user-attachments/assets/20a656ee-54cc-4ab3-b0c7-253dfa9a3816">
+
+<img width="762" alt="Screenshot 2024-07-20 155555_day2" src="https://github.com/user-attachments/assets/ca8cb0b0-55e4-495a-b6e2-50d347a00858">
+
+<img width="765" alt="Screenshot 2024-07-20 155908_day2" src="https://github.com/user-attachments/assets/91b107cf-1ea6-46cd-9216-b8ca6d2cebab">
+
+<img width="764" alt="Screenshot 2024-07-22 140736_day2" src="https://github.com/user-attachments/assets/3050f9b3-37d6-48cd-ab8a-cfa38d4444b2">
+
+<img width="662" alt="Screenshot 2024-07-22 235923_day2" src="https://github.com/user-attachments/assets/14151852-edee-44ba-87ff-a6083b87941c">
+
+<img width="704" alt="Screenshot 2024-07-23 000436_day2" src="https://github.com/user-attachments/assets/0cbc32df-6482-4a30-ba76-e663da2c80f7">
+
+<img width="712" alt="Screenshot 2024-07-23 001305_day2" src="https://github.com/user-attachments/assets/be983ae5-13f4-4de5-8b2b-168a7a5e6c94">
+
+<img width="706" alt="Screenshot 2024-07-23 002523_day2" src="https://github.com/user-attachments/assets/f65f5114-3c8d-4699-adff-8fb3c7eea889">
+
+<img width="739" alt="Screenshot 2024-07-23 002623_day2" src="https://github.com/user-attachments/assets/53f16db3-d57a-4bc0-b6f8-6350a09797ab">
+
+<img width="710" alt="Screenshot 2024-07-23 002706_day2" src="https://github.com/user-attachments/assets/0876792c-a075-4c59-88e2-d98978d2cca9">
+
+<img width="704" alt="Screenshot 2024-07-23 005246_day2" src="https://github.com/user-attachments/assets/cd180e88-360d-4f05-a21a-41cdb3656c75">
+
+<img width="764" alt="Screenshot 2024-07-23 011626_day2" src="https://github.com/user-attachments/assets/b60c3b34-f726-4da3-9a3f-714b2b8fcd8b">
+
+<img width="708" alt="Screenshot 2024-07-23 012157_day2" src="https://github.com/user-attachments/assets/be965058-3308-4647-a9aa-59371566677e">
+
+<img width="704" alt="Screenshot 2024-07-23 013255_day2" src="https://github.com/user-attachments/assets/19553d9e-cb99-4035-b51b-f714de9a81ae">
+
+
+
