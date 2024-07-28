@@ -527,3 +527,6 @@ $   close $FH
 ![Worst Hold Slack (WHS) across PVT Corners](https://github.com/user-attachments/assets/9a815207-4d30-4323-955e-5beefda71a6e)
 ![Worst Negative Slack (WNS) across PVT Corners](https://github.com/user-attachments/assets/191549e3-74dc-49c8-af7d-5210f7c78f03)
 
+<h1> Pre-requisites for Floorplanning, P&R : PD Basic concepts </h1>
+
+<h2> SOC Design Flow <>
