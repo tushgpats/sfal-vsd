@@ -529,4 +529,20 @@ $   close $FH
 
 <h1> Pre-requisites for Floorplanning, P&R : PD Basic concepts </h1>
 
-<h2> SOC Design Flow <>
+<h2> SOC </h2>
+A System on Chip (SoC) integrates various components and functionalities of a complete system, including processors, memory, peripherals, and interconnects, onto a single chip. This integration enables the development of compact, efficient, and high-performance systems.
+
+<h2> SOC Design Flow </h2>
+<img width="791" alt="Screenshot 2024-07-27 at 5 39 23 PM" src="https://github.com/user-attachments/assets/a8b89428-b3d1-401b-b587-f12365897644">
+Creating the specifications is the first step in the process, which then progresses to the RTL design stage, which integrates numerous IP cores (soft IP). After that, the design advances to the SoC Integrator step, where a gate-level netlist is produced using synthesis and Design for Test (DFT). In this phase, firm IP cores are merged. Hard IP cores are implemented throughout the layout and Static Timing Analysis (STA) phases of the design. The design is then prepared for manufacture by being transferred into GDSII format.
+https://vlsiuniverse.com/soc-design-life-cycle-vlsi-chip-2021/#google_vignette 
+
+<h2> Openlane </h2>
+![flow](https://github.com/user-attachments/assets/cf14080b-3090-4441-b857-3288c4b6a915)
+
+OpenLane is a powerful and versatile infrastructure library that enables the construction of digital ASIC physical implementation flows based on open-source and commercial EDA tools. It includes a reference flow (Classic) that is constructed entirely using open-source EDA tools –abstracting their behavior and allowing the user to configure them using a single file (See Figure 1). OpenLane also supports extending or modifying flows using Python scripts and utilities. Here are some of the key benefits of using OpenLane:
+
+Flexibility and extensibility: OpenLane is designed to be flexible and extensible, allowing designers to customize the flow to meet their specific needs by developing Python scripts (plugins) and utilities or by modifying the existing configuration file.
+Open source: OpenLane is an open-source project that is freely available to use and modify, which makes it a good choice for designers looking for a transparent, cost-effective solution.
+Community support: OpenLane capitalizes on OpenLane’s existing community of users and contributors, which means that a wealth of resources is available to help designers get started and troubleshoot any problems they encounter.
+https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html#newcomers
