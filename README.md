@@ -585,23 +585,23 @@ Die Area in µm^2 = (507.125 * 517.935) µm^2 = 262657.786 µm^2 according to th
 
 Loading generated floorplan.def in magic tool and exploring it
 <img width="662" alt="Screenshot 2024-07-22 235923_day2" src="https://github.com/user-attachments/assets/14151852-edee-44ba-87ff-a6083b87941c">
-
+Equidistant placement of ports
 <img width="704" alt="Screenshot 2024-07-23 000436_day2" src="https://github.com/user-attachments/assets/0cbc32df-6482-4a30-ba76-e663da2c80f7">
-
+Port layers
 <img width="712" alt="Screenshot 2024-07-23 001305_day2" src="https://github.com/user-attachments/assets/be983ae5-13f4-4de5-8b2b-168a7a5e6c94">
-
+Decap cell locations at end of rows
 <img width="706" alt="Screenshot 2024-07-23 002523_day2" src="https://github.com/user-attachments/assets/f65f5114-3c8d-4699-adff-8fb3c7eea889">
-
+diagonally equidistant Tap cells
 <img width="739" alt="Screenshot 2024-07-23 002623_day2" src="https://github.com/user-attachments/assets/53f16db3-d57a-4bc0-b6f8-6350a09797ab">
 
 <img width="710" alt="Screenshot 2024-07-23 002706_day2" src="https://github.com/user-attachments/assets/0876792c-a075-4c59-88e2-d98978d2cca9">
-
+Unplaced standard cells present at origin
 <img width="704" alt="Screenshot 2024-07-23 005246_day2" src="https://github.com/user-attachments/assets/cd180e88-360d-4f05-a21a-41cdb3656c75">
-
+Running Congestion aware Placement
 <img width="764" alt="Screenshot 2024-07-23 011626_day2" src="https://github.com/user-attachments/assets/b60c3b34-f726-4da3-9a3f-714b2b8fcd8b">
-
+Loading generated placement.def in magic tool
 <img width="708" alt="Screenshot 2024-07-23 012157_day2" src="https://github.com/user-attachments/assets/be965058-3308-4647-a9aa-59371566677e">
-
+Legally Placed Standard Cells
 <img width="704" alt="Screenshot 2024-07-23 013255_day2" src="https://github.com/user-attachments/assets/19553d9e-cb99-4035-b51b-f714de9a81ae">
 
 <h2> Design of Library Cell using Magic Layout and performing spice characterization </h2>
