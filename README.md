@@ -591,5 +591,20 @@ https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html#
 
 <img width="704" alt="Screenshot 2024-07-23 013255_day2" src="https://github.com/user-attachments/assets/19553d9e-cb99-4035-b51b-f714de9a81ae">
 
+<h2> Design of Library Cell using Magic Layout and performing spice characterization </h2>
+
+<img width="675" alt="Screenshot 2024-07-26 232057_day3" src="https://github.com/user-attachments/assets/3190c1da-489b-4b9f-bed9-d7fcd333cb48">
+
+<img width="677" alt="Screenshot 2024-07-26 233834_day3" src="https://github.com/user-attachments/assets/52af8b12-d99a-4c05-9219-5b40578de20e">
+
+<img width="694" alt="Screenshot 2024-07-27 123135_day3" src="https://github.com/user-attachments/assets/32d23574-3cfc-4b6f-83dc-040017bd7577">
+
+<img width="716" alt="Screenshot 2024-07-27 123241_day3" src="https://github.com/user-attachments/assets/5120b40e-396b-43ea-9a0b-fbb71b8fac18">
+
+<img width="673" alt="Screenshot 2024-07-27 132851_day3" src="https://github.com/user-attachments/assets/5638b558-52ca-4c59-9160-1bc1d5b2e1d7">
+
+<img width="697" alt="Screenshot 2024-07-27 131306_day3" src="https://github.com/user-attachments/assets/a6ca3d7c-bd87-49cd-8d95-afac22a08489">
+
+<img width="680" alt="Screenshot 2024-07-27 144314_day3" src="https://github.com/user-attachments/assets/0f2a480f-cac1-4f16-85f1-1152e5291abd">
 
 
