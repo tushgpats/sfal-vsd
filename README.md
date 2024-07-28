@@ -538,8 +538,8 @@ Creating the specifications is the first step in the process, which then progres
 https://vlsiuniverse.com/soc-design-life-cycle-vlsi-chip-2021/#google_vignette 
 
 <h2> Openlane </h2>
-![flow](https://github.com/user-attachments/assets/cf14080b-3090-4441-b857-3288c4b6a915)
 
+![image](https://github.com/user-attachments/assets/4d050a9a-58e2-48d3-934b-a065bf6cb189)
 OpenLane is a powerful and versatile infrastructure library that enables the construction of digital ASIC physical implementation flows based on open-source and commercial EDA tools. It includes a reference flow (Classic) that is constructed entirely using open-source EDA tools –abstracting their behavior and allowing the user to configure them using a single file (See Figure 1). OpenLane also supports extending or modifying flows using Python scripts and utilities. Here are some of the key benefits of using OpenLane:
 
 Flexibility and extensibility: OpenLane is designed to be flexible and extensible, allowing designers to customize the flow to meet their specific needs by developing Python scripts (plugins) and utilities or by modifying the existing configuration file.
