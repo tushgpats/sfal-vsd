@@ -620,4 +620,10 @@ Legally Placed Standard Cells
 
 <img width="680" alt="Screenshot 2024-07-27 144314_day3" src="https://github.com/user-attachments/assets/0f2a480f-cac1-4f16-85f1-1152e5291abd">
 
+<h2> Day 5 : Final Steps for RTL2GDS using Tritionroute </h2>
+Now as CTS has been Performed, We Can Proceed to Routing using Triton 
+The Command for this is 
+$gen_pdn
+<img width="485" alt="Screenshot 2024-08-28 063359_Day4_runfullflowtillpostcts18" src="https://github.com/user-attachments/assets/2542be18-6fde-46a2-a74f-97f5063379cb">
+
 
