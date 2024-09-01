@@ -751,6 +751,130 @@ $ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/li
 
 <img width="890" alt="Screenshot 2024-08-22 114943_day4" src="https://github.com/user-attachments/assets/66748d02-c65d-4a2a-951f-c39af5c2ac78">
 
+Abutment of power pins of custom inverter with other library cells:
+
+<img width="895" alt="Screenshot 2024-08-22 115902_day4" src="https://github.com/user-attachments/assets/d7c63a90-8574-451b-bad6-60e811829421">
+
+We now Perform Post synthesis Static Timing Analysis with OpenSTA tool and Rerun synthesis without adding any parameters to improve timing.
+
+```
+$ cd ~/Desktop/work/tools/openlane_working_dir/openlane 
+
+$ docker
+
+$ ./flow.tcl -interactive 
+
+$ package require openlane 0.9 
+
+$ prep -design picorv32a #prepares the picorv32a design for openlane flow
+
+$ set lefs [glob $::env(DESIGN_DIR)/src/*.lef] 
+
+$ add_lefs -src $lefs # Addiitional commands to include newly added lef to openlane flow merged.lef
+
+$ set ::env(SYNTH_SIZING) 1 # Command to set new value for SYNTH_SIZING
+
+$ run_synthesis #run synthesis for the prepared design
+```
+We now run syntheis sucessfully
+<img width="492" alt="Screenshot 2024-08-22 121058_day4_Postplacement" src="https://github.com/user-attachments/assets/75a2d145-31b6-48e5-bc5d-47f5d09078f8">
+
+We now create my_base.sdc in "/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/my_base.sdc"
+<img width="449" alt="Screenshot 2024-08-23 041444_day4_stasdc" src="https://github.com/user-attachments/assets/2bb5b0d0-b559-4304-bfd5-a92a3d5b53c5">
+
+<img width="443" alt="Screenshot 2024-08-22 124441_day4_staconf" src="https://github.com/user-attachments/assets/1a70bd5e-20ff-4e19-9850-29d1fc85d006">
+
+We now run STA in another terminal using the command
+
+```
+$ sta pre_sta.conf
+```
+<img width="497" alt="Screenshot 2024-08-23 042722_day4pre_sta1" src="https://github.com/user-attachments/assets/e9a6a36f-63aa-48a9-9f44-f485440f2c26">
+
+<img width="497" alt="Screenshot 2024-08-23 042839_day4_presta_2" src="https://github.com/user-attachments/assets/62dfd56f-c471-43a9-9b49-9d99479dd570">
+
+<img width="497" alt="Screenshot 2024-08-24 151356_day4_preconf1" src="https://github.com/user-attachments/assets/d9fc20fc-288d-4d68-a937-5a274bfcde93">
+
+<img width="497" alt="Screenshot 2024-08-24 151432_Day4_preconf2" src="https://github.com/user-attachments/assets/a178eb20-2689-45ce-baf9-3f222c6e56ac">
+
+<img width="496" alt="Screenshot 2024-08-24 151557_Day4_preconf" src="https://github.com/user-attachments/assets/7ffb15db-bf46-49af-90bb-6f1f22dec313">
+
+We Carry out EECO fixes to reduce timing violations:
+
+<img width="497" alt="Screenshot 2024-08-24 170508_day4_preconfstabeforeEECOfixes4" src="https://github.com/user-attachments/assets/45d48a60-c60d-4c09-90ca-4b43f2d12a39">
+
+Run synthesis with constraint on max fanout
+<img width="491" alt="Screenshot 2024-08-26 171418_day4" src="https://github.com/user-attachments/assets/e274405b-a4f1-47a1-abf1-aa24427b8b7c">
+
+<img width="491" alt="Screenshot 2024-08-27 125611_day4_orgatedrivstr2fanout4" src="https://github.com/user-attachments/assets/2121548b-e4fe-4128-a56a-ba867591b096">
+
+<img width="493" alt="Screenshot 2024-08-27 130012_day4_orgate1reportnet" src="https://github.com/user-attachments/assets/7bc6decc-f378-45b2-ac44-759a2582a574">
+
+<img width="494" alt="Screenshot 2024-08-27 130847_day4_orgatefo4commands" src="https://github.com/user-attachments/assets/6886556c-6a27-4cad-94a0-afa5221b4347">
+
+<img width="491" alt="Screenshot 2024-08-27 130954_day4_orgatefo4slackreduced1" src="https://github.com/user-attachments/assets/09ba71ae-d1f8-45d2-8c23-c803332b48b9">
+
+<img width="490" alt="Screenshot 2024-08-27 131320_day4_orgatefo4slavkreduced2" src="https://github.com/user-attachments/assets/1a3d39b9-92d7-4bca-ae3d-c59a9a0077ea">
+
+<img width="490" alt="Screenshot 2024-08-27 131541_day4orgatef4ss" src="https://github.com/user-attachments/assets/b30dda6f-a767-4091-917e-1388505629c3">
+
+<img width="491" alt="Screenshot 2024-08-27 132119_day4_orgatefo4_2_commands" src="https://github.com/user-attachments/assets/1b1604d9-cda4-4a7b-83fa-ad16a6141bdc">
+
+<img width="488" alt="Screenshot 2024-08-27 132427_day4orgateslackreduced2nditer" src="https://github.com/user-attachments/assets/b2e6b081-303a-4e22-98af-7b76ffd9a6c4">
+
+<img width="492" alt="Screenshot 2024-08-27 132610_Day4_orgatedrivestr2largedelay" src="https://github.com/user-attachments/assets/2250bd3c-070a-4195-9ef8-a0593c0e791c">
+
+<img width="492" alt="Screenshot 2024-08-27 133231_day4_orgatedrivestr2largedelaycommands" src="https://github.com/user-attachments/assets/ea4014a9-e2fc-489e-9393-13c4f486ca2e">
+
+<img width="493" alt="Screenshot 2024-08-27 133423_Day4_orgatedrivestr2largedelayslackredjuced" src="https://github.com/user-attachments/assets/170cbc22-c045-49cb-9433-fe5810dca708">
+
+<img width="491" alt="Screenshot 2024-08-27 135508_Day4drivingstr2dealyhighslackreduced" src="https://github.com/user-attachments/assets/3d16c169-43c5-4358-b8d4-78e701fd7f9c">
+
+<img width="493" alt="Screenshot 2024-08-27 140103_day4_orgateoagatemoredelay" src="https://github.com/user-attachments/assets/d099c784-6310-4da1-bf17-e3df54299cd4">
+
+<img width="491" alt="Screenshot 2024-08-27 140830_Day4_orgatedrivingoahighdelaycommands" src="https://github.com/user-attachments/assets/94a1a485-f475-46a6-9062-9a9739538786">
+
+<img width="493" alt="Screenshot 2024-08-27 141012_Day4orgatedrivingoaslackreduced" src="https://github.com/user-attachments/assets/b0a95ff5-e117-41f7-a9ba-5805698dc652">
+
+<img width="494" alt="Screenshot 2024-08-27 141232_day4Customtimimgreport" src="https://github.com/user-attachments/assets/1a15e4e6-f354-4a77-93a1-ea1a2b783878">
+
+<img width="494" alt="Screenshot 2024-08-27 141315_Day4customreportslackreduced2" src="https://github.com/user-attachments/assets/e0a3ca1b-727e-4ec0-8dfb-672a5e1cf9de">
+
+We now Replace the old netlist with the new netlist generated after timing ECO fix , and implementing the floorplan, placement and cts:
+we first make copy of old netlist:
+
+<img width="492" alt="Screenshot 2024-08-27 171846_day4" src="https://github.com/user-attachments/assets/1e93ea39-30a6-44c3-8de5-7ae726a12e36">
+
+<img width="492" alt="Screenshot 2024-08-27 171846_day4" src="https://github.com/user-attachments/assets/3a376743-ff5b-4de2-9648-cc6a5e29b3ee">
+
+We Verify if the instance 14506 is replaced with sky130_fd_sc_hd__or4_4 
+<img width="440" alt="Screenshot 2024-08-27 173005_Day4_verifyoverwrittennetlist" src="https://github.com/user-attachments/assets/1b03f216-36c7-458f-ad90-2298cdf2ee89">
+
+We now Rerun synthesis,floorplan,and placement and CTS in the netlist with no timing violations
+<img width="493" alt="Screenshot 2024-08-27 180718_Day4_prectssynthesis" src="https://github.com/user-attachments/assets/ab1655f8-f93f-4edd-ab94-7262c2ede059">
+
+<img width="492" alt="Screenshot 2024-08-27 180817_day4_prectsfloorplan1" src="https://github.com/user-attachments/assets/2a287774-732b-4da7-b565-48d672167d2c">
+
+<img width="492" alt="Screenshot 2024-08-27 180925_Day4_prectsfloorplan2" src="https://github.com/user-attachments/assets/99985f5a-e1cf-45c0-81d4-9d43fb7527f6">
+
+<img width="491" alt="Screenshot 2024-08-27 181344_Day4prectsfloorplan3" src="https://github.com/user-attachments/assets/d482bca8-029c-4b30-a855-47393f0d2c03">
+
+<img width="503" alt="Screenshot 2024-08-27 181546_Day4prectsfloorplan4" src="https://github.com/user-attachments/assets/cee364de-0404-4c9e-90d5-a0a1edc9adbe">
+
+<img width="500" alt="Screenshot 2024-08-27 181800_Day4_runcts1" src="https://github.com/user-attachments/assets/cd58f0e5-57b6-4229-a9b6-09b77cf960be">
+
+<img width="502" alt="Screenshot 2024-08-27 185309_Day4_cts2" src="https://github.com/user-attachments/assets/110e4359-be9e-406d-bc00-8d3c3904d347">
+
+<img width="507" alt="Screenshot 2024-08-27 191916_Day4_postctsopenroadtimimganal1" src="https://github.com/user-attachments/assets/a46afd2b-f833-48e5-969f-1723ad67d6da">
+
+<img width="506" alt="Screenshot 2024-08-27 192322_Day4_postctstimimganalysis2" src="https://github.com/user-attachments/assets/8e74a8cb-2b03-4241-a921-792920a798c4">
+
+<img width="506" alt="Screenshot 2024-08-27 192604_Day4postctstiminganal3" src="https://github.com/user-attachments/assets/82a1707c-3052-42ca-9247-ede12e1355dc">
+
+<img width="488" alt="Screenshot 2024-08-27 192846_Day4_postctstiminganal4" src="https://github.com/user-attachments/assets/f13d8eb2-8e9c-4f56-a928-d84afd8b383d">
+
+<img width="489" alt="Screenshot 2024-08-28 045953_Day4synthesisrerunflowtillpostcts" src="https://github.com/user-attachments/assets/3732af0e-40e5-4d46-baff-0e4db9730126">
+
 
 
 <h2> Day 5 : Final Steps for RTL2GDS using Tritionroute </h2>
