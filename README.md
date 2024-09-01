@@ -623,7 +623,75 @@ Legally Placed Standard Cells
 <h2> Day 5 : Final Steps for RTL2GDS using Tritionroute </h2>
 Now as CTS has been Performed, We Can Proceed to Routing using Triton 
 The Command for this is 
-$gen_pdn
+```
+$ gen_pdn
+```
 <img width="485" alt="Screenshot 2024-08-28 063359_Day4_runfullflowtillpostcts18" src="https://github.com/user-attachments/assets/2542be18-6fde-46a2-a74f-97f5063379cb">
 
+```
+$ cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-08_11-52/tmp/floorplan/ #change directory containing PDN def
 
+$ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 17-pdn.def & #Command to open PDN def in magic tool
+```
+<img width="488" alt="Screenshot 2024-08-28 063549_Day5_pdn" src="https://github.com/user-attachments/assets/df34cd81-4827-46a1-b23b-1b6a0640855d">
+
+Below is the PDN Screenshot
+<img width="710" alt="Screenshot 2024-08-28 064236_Day5_pdn17layoutmag" src="https://github.com/user-attachments/assets/aa7cb7de-b3b1-4d74-bdf5-2f2bb41dda74">
+
+<img width="709" alt="Screenshot 2024-08-28 064803_Day5_pdnlayoutexpanded" src="https://github.com/user-attachments/assets/eaae13e8-055e-428a-8931-182bad1c41bd">
+
+We now perform detailed routing using TritonRoute and explore the routed layout:
+
+```
+$ echo $::env(CURRENT_DEF) # Check value of 'CURRENT_DEF'
+
+$ echo $::env(GLOBAL_ROUTER) #Specifies which global router to use. Values: `fastroute` or `cugr`,(Default: `fastroute`) 
+
+$ echo $::env(DETAILED_ROUTER) # Specifies which detailed router to use. Values: `tritonroute`, `tritonroute_or`, or `drcu`. <br> (Default: `tritonroute`)
+
+$ echo $::env(ROUTING_OPT_ITERS) # Specifies the maximum number of optimization iterations during Detailed Routing in TritonRoute (Default: `64`)
+```
+
+<img width="491" alt="Screenshot 2024-08-28 065520_Day5_echo" src="https://github.com/user-attachments/assets/43a7810b-acf8-4052-8498-109f13e255c2">
+
+We now run Routing using the command 
+
+```
+$ run_routing
+```
+
+Below are the routing screenshots.
+
+<img width="487" alt="Screenshot 2024-08-28 065811_Day5_runrout1" src="https://github.com/user-attachments/assets/d965bdd0-90f1-4cfb-97bf-039cb1bbbe9e">
+
+<img width="488" alt="Screenshot 2024-08-28 070457_Day4_runroute2" src="https://github.com/user-attachments/assets/e90a892f-4e65-4938-bf5c-704d1adb4692">
+
+<img width="491" alt="Screenshot 2024-08-28 070547_day5_runroute3" src="https://github.com/user-attachments/assets/b72b5b51-328e-440c-a04a-f12d90fb7f2a">
+
+<img width="489" alt="Screenshot 2024-08-28 070626_Day5_runroute4" src="https://github.com/user-attachments/assets/280485b3-509c-40c8-9ee3-aa0feac3dd3f">
+
+```
+$ cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-08_11-52/results/routing/ # Change directory to path containing routed def
+
+$ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def & 
+```
+
+Routed def Screenshots.
+
+<img width="710" alt="Screenshot 2024-08-28 072403_Day5routedlayout" src="https://github.com/user-attachments/assets/e4af5bb8-3cd9-4fe6-ae6e-e20c07957810">
+
+<img width="712" alt="Screenshot 2024-08-28 072835_Day5_routedlayoutexpanded" src="https://github.com/user-attachments/assets/15389198-67d8-40e9-8d88-bbc07bce0fb4">
+
+Post-route STA analysis:
+
+path of SPEF file post route: /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-08_11-52/results/routing/picorv32a.spef
+
+To perform Static Timing Analysis (STA) in the OpenROAD flow within OpenLane after post-routing, you need to follow a structured process.
+
+First, you need to create a new database for STA because the design database (db) has changed from the Clock Tree Synthesis (CTS) phase to the routing phase. This updated database will reflect the new connectivity and routing information, which is crucial for accurate timing analysis.
+
+Next, ensure that you are using the post-route netlist for the analysis. This netlist incorporates the routing information, which is essential for assessing the timing of your design accurately.  The netlist should be the one generated after the routing phase.
+
+A critical step in the process involves incorporating parasitic capacitance data from the SPEF (Standard Parasitic Exchange Format) file. This file contains information about the parasitic capacitance of the nets, which significantly impacts timing analysis.You need to read this SPEF file before generating the custom timing report. 
+
+We Finally, generate a custom timing report using the appropriate STA tool. 
