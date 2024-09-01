@@ -620,6 +620,139 @@ Legally Placed Standard Cells
 
 <img width="680" alt="Screenshot 2024-07-27 144314_day3" src="https://github.com/user-attachments/assets/0f2a480f-cac1-4f16-85f1-1152e5291abd">
 
+<h2> Day 4 : Pre-layout timing analysis and importance of good clock tree </h2>
+
+In order to ensure that a custom inverter cell is ready for insertion into the OpenLane flow, we verify the following conditions: The input and output ports of the standard cell must be aligned with the intersections of the vertical and horizontal tracks. Additionally, the width of the cell should be an odd multiple of the horizontal track pitch, while the height should be an even multiple of the vertical track pitch. Checking these alignments and measurements ensures that the cell meets the required design specifications for integration.
+
+<img width="500" alt="Screenshot 2024-08-14 122844_day4" src="https://github.com/user-attachments/assets/588727d2-c8b6-4205-829a-5f6f49136353">
+
+```
+$ cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+
+$ magic -T sky130A.tech sky130_inv.mag & 
+
+$ help grid 
+
+$ grid 0.46um 0.34um 0.23um 0.17um 
+```
+<img width="851" alt="Screenshot 2024-08-14 125609_day4" src="https://github.com/user-attachments/assets/5e08b95c-ddd0-4967-bd50-537d268be38d">
+
+<img width="673" alt="Screenshot 2024-08-14 170629_day4" src="https://github.com/user-attachments/assets/e6573b9b-a350-4fc7-bd7d-79b0e9b2a575">
+
+<img width="672" alt="Screenshot 2024-08-14 171312_day4" src="https://github.com/user-attachments/assets/31fb5fb4-cf3b-4bf9-8bb7-85493256310b">
+
+<img width="808" alt="Screenshot 2024-08-14 171838_day4" src="https://github.com/user-attachments/assets/6228e4c5-51e2-495d-bbda-e1266687e3ce">
+
+We now save custom inverter layout with a name and generate its corresponding lef
+
+```
+$ save sky130_vsdinv.mag
+
+$ magic -T sky130A.tech sky130_tusharinv.mag &
+
+$ lef write 
+```
+<img width="677" alt="Screenshot 2024-08-16 112101_day4" src="https://github.com/user-attachments/assets/c83fe446-dfef-4661-ab3d-1979419a832e">
+
+<img width="689" alt="Screenshot 2024-08-16 112918_day4" src="https://github.com/user-attachments/assets/727ba809-bde3-4a89-af5a-090968fcf0b8">
+
+Newly generated lef.
+
+<img width="490" alt="Screenshot 2024-08-16 120925_day4" src="https://github.com/user-attachments/assets/a61dd7cd-7b2b-4f2b-9b2c-342c92a96a26">
+
+We now copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory
+
+```
+$ cp sky130_tusharinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+
+$ cp libs/sky130_fd_sc_hd__* ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/ 
+```
+We now Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow:
+
+<img width="497" alt="Screenshot 2024-08-16 133637_day4" src="https://github.com/user-attachments/assets/87d145a7-b74d-4ac7-8eb0-e2f01620c514">
+
+We now Perform openlane flow synthesis with newly inserted custom inverter cell:
+
+```
+$ cd ~/Desktop/work/tools/openlane_working_dir/openlane
+
+$ docker
+
+$ ./flow.tcl -interactive 
+
+$ package require openlane 0.9 
+
+$ prep -design picorv32a 
+
+$ run_synthesis 
+```
+<img width="489" alt="Screenshot 2024-08-28 045953_Day4synthesisrerunflowtillpostcts" src="https://github.com/user-attachments/assets/46844128-4c82-4d93-9aae-4fe5839d4e81">
+
+<img width="592" alt="Screenshot 2024-08-20 061426_day4" src="https://github.com/user-attachments/assets/dbd68b41-6a2e-4a04-a54f-9292640d1547">
+
+```
+$ prep -design picorv32a -tag 09-04_13-19 -overwrite 
+
+$ set lefs [glob $::env(DESIGN_DIR)/src/*.lef] 
+
+$ add_lefs -src $lefs # Addiitional commands to include newly added lef to openlane flow merged.lef
+
+$ echo $::env(SYNTH_STRATEGY) # Command to display current value of variable SYNTH_STRATEGY
+
+$ set ::env(SYNTH_STRATEGY) "DELAY 3" # Command to set new value for SYNTH_STRATEGY
+
+$ echo $::env(SYNTH_BUFFERING) # Command to display current value of variable SYNTH_BUFFERING to check whether it's enabled
+
+$ echo $::env(SYNTH_SIZING) # Command to display current value of variable SYNTH_SIZING
+
+$ set ::env(SYNTH_SIZING) 1 # Command to set new value for SYNTH_SIZING
+
+$ echo $::env(SYNTH_DRIVING_CELL) # Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not
+
+$ run_synthesis # Now that the design is prepped and ready, we can run synthesis again
+```
+<img width="592" alt="Screenshot 2024-08-17 133549_day4" src="https://github.com/user-attachments/assets/16cfae1d-dc50-4eed-b52a-bdb9aa4c4092">
+
+<img width="592" alt="Screenshot 2024-08-17 135116_day4" src="https://github.com/user-attachments/assets/1ef30071-a0a5-4fba-90cb-d4a192240a58">
+
+<img width="593" alt="Screenshot 2024-08-17 135411_day4" src="https://github.com/user-attachments/assets/4f8f4c35-dd4f-4006-bf58-b802fb068bf3">
+
+<img width="530" alt="Screenshot 2024-08-20 061150_day4" src="https://github.com/user-attachments/assets/d3e043ef-b482-40b6-8924-0851fd5bb1e1">
+
+<img width="592" alt="Screenshot 2024-08-17 140300_day4" src="https://github.com/user-attachments/assets/e56a53d2-3e16-46c9-b899-8e51cf4da8b0">
+
+We now Run Floorplan and Placement and verify whether custom cell is accepted in PnR flow.
+
+<img width="593" alt="Screenshot 2024-08-20 061922_day4" src="https://github.com/user-attachments/assets/f24d4328-9672-4c81-a3d8-5e8087fb5523">
+
+As run_floorplan command fails, We runfloorplan in three descrete steps.
+
+<img width="592" alt="Screenshot 2024-08-17 140837_day4" src="https://github.com/user-attachments/assets/69d87973-24c7-4e7b-844a-6ea8a06aad5c">
+
+<img width="591" alt="Screenshot 2024-08-17 140940_day4" src="https://github.com/user-attachments/assets/65e48b67-ecd1-4308-9010-7b5d6f537723">
+
+<img width="590" alt="Screenshot 2024-08-17 141117_day4" src="https://github.com/user-attachments/assets/b24d9aa6-110b-4492-9b90-3cad2557b5e6">
+
+We now run placement. The command for the same is :
+```
+$ run_placement
+```
+
+<img width="593" alt="Screenshot 2024-08-17 141343_day4" src="https://github.com/user-attachments/assets/490551c4-3246-423a-8f9d-11040f4fd32b">
+
+We now Load placement def in magic tool:
+
+```
+$ cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/09-04_13-19/results/placement/ 
+
+$ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def & 
+```
+<img width="667" alt="Screenshot 2024-08-17 142005_day4" src="https://github.com/user-attachments/assets/3b90e2f7-e570-4b5c-a814-5c513e885dc8">
+
+<img width="890" alt="Screenshot 2024-08-22 114943_day4" src="https://github.com/user-attachments/assets/66748d02-c65d-4a2a-951f-c39af5c2ac78">
+
+
+
 <h2> Day 5 : Final Steps for RTL2GDS using Tritionroute </h2>
 Now as CTS has been Performed, We Can Proceed to Routing using Triton 
 The Command for this is 
