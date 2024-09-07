@@ -749,6 +749,8 @@ $ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/li
 ```
 <img width="667" alt="Screenshot 2024-08-17 142005_day4" src="https://github.com/user-attachments/assets/3b90e2f7-e570-4b5c-a814-5c513e885dc8">
 
+Screensjot of Custom Layout sky130_tusharinv highlighted in the newly placed design
+
 <img width="890" alt="Screenshot 2024-08-22 114943_day4" src="https://github.com/user-attachments/assets/66748d02-c65d-4a2a-951f-c39af5c2ac78">
 
 Abutment of power pins of custom inverter with other library cells:
