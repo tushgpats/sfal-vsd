@@ -978,3 +978,73 @@ Block dimension computation is one of the first steps in floorplanning, when eac
 To manage congestion, floorplanning reserves specific areas for routing channels, preventing overcrowded regions and ensuring efficient signal routing between blocks. Additionally, it handles aspect ratio and core alignment, maintaining a balanced height-to-width ratio of blocks for uniformity and proper chip structure. Buffer and repeater insertion are also incorporated into the design to manage signal integrity, particularly for long wires or high-frequency designs. Macro placement is another critical aspect, as large blocks like memory or IP cores must be placed first due to their fixed dimensions, which influence the overall floorplan. 
 
  Floorplanning is an iterative process that requires continuous feedback and adjustment. After the initial layout, performance metrics such as wire length, congestion, and timing are analyzed. Based on this analysis, the floorplan is refined and optimized to ensure the best possible performance. This feedback loop ensures that each iteration improves upon the previous layout. In timing-driven designs, floorplanning prioritizes the reduction of timing delays by focusing on critical timing paths. These timing-sensitive blocks are placed closer together to minimize path lengths, which is crucial in high-frequency designs where timing precision directly impacts the overall performance of the chip.
+
+
+Essential files:
+
+top.tcl
+
+<img width="1038" alt="Screenshot 2024-09-24 at 4 18 35 PM" src="https://github.com/user-attachments/assets/c3ccb716-8f01-4a37-b817-cab9e9dee40c">
+<img width="1038" alt="Screenshot 2024-09-24 at 4 19 21 PM" src="https://github.com/user-attachments/assets/109f6921-52f6-4f4c-9b2d-5486604dc25b">
+<img width="1038" alt="Screenshot 2024-09-24 at 4 19 57 PM" src="https://github.com/user-attachments/assets/bbb6719a-54f2-4d43-88b6-4053c1d733db">
+<img width="1038" alt="Screenshot 2024-09-24 at 4 22 57 PM" src="https://github.com/user-attachments/assets/265579af-9a03-45e0-94bd-2126a10b251c">
+<img width="1038" alt="Screenshot 2024-09-24 at 4 27 26 PM" src="https://github.com/user-attachments/assets/d55a1579-d143-4f11-ab4e-c066db364f30">
+<img width="1038" alt="Screenshot 2024-09-24 at 4 29 08 PM" src="https://github.com/user-attachments/assets/e7401e85-8d73-4a0d-a5d5-b27f0d3dff5b">
+
+
+icc2_common_setup.tcl
+
+<img width="1038" alt="Screenshot 2024-09-24 at 4 32 33 PM" src="https://github.com/user-attachments/assets/90cb4d19-f57b-4325-a3cc-aaa607e617f3">
+<img width="1038" alt="Screenshot 2024-09-24 at 4 36 12 PM" src="https://github.com/user-attachments/assets/f748bacf-2b2a-4d1a-9c48-63f3c32de10f">
+<img width="1038" alt="Screenshot 2024-09-24 at 4 38 25 PM" src="https://github.com/user-attachments/assets/f63e0569-413b-4a72-91ca-142db3561918">
+<img width="1038" alt="Screenshot 2024-09-24 at 5 12 22 PM" src="https://github.com/user-attachments/assets/58e18fb4-428a-4a34-b349-170e72e25b4b">
+<img width="1038" alt="Screenshot 2024-09-24 at 5 13 30 PM" src="https://github.com/user-attachments/assets/7d09dd07-c467-4ed7-b53b-3be43564c68e">
+
+icc2_dp_setup.tcl
+
+<img width="1038" alt="Screenshot 2024-09-24 at 5 37 06 PM" src="https://github.com/user-attachments/assets/a4df3883-c3d4-42c7-97de-3b45fff99a5e">
+<img width="1038" alt="Screenshot 2024-09-24 at 5 39 14 PM" src="https://github.com/user-attachments/assets/192108fd-75d5-412e-8d87-fcb01c4e5a40">
+
+
+init_design.read-parasitic_tech_example.tcl
+
+<img width="1038" alt="Screenshot 2024-09-25 at 4 53 33 PM" src="https://github.com/user-attachments/assets/3060a7fd-629e-40b8-8f44-8409baec5bbd">
+
+
+init_design.mcmm_example.auto-expanded.tcl
+
+<img width="1038" alt="Screenshot 2024-09-25 at 5 26 37 PM" src="https://github.com/user-attachments/assets/7ae1639c-f686-45e6-a0ba-14b4224e7704">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
