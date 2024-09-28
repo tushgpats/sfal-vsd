@@ -526,8 +526,8 @@ $   close $FH
 <img width="763" alt="Screenshot 2024-07-12 at 4 26 19 PM" src="https://github.com/user-attachments/assets/3e9ba184-b95c-4575-b2cb-e2acf40cf420">
 ![Worst Hold Slack (WHS) across PVT Corners](https://github.com/user-attachments/assets/9a815207-4d30-4323-955e-5beefda71a6e)
 ![Worst Negative Slack (WNS) across PVT Corners](https://github.com/user-attachments/assets/191549e3-74dc-49c8-af7d-5210f7c78f03)
-
-<h1> Pre-requisites for Floorplanning, P&R : PD Basic concepts </h1>
+<details>
+<summary> <h1> Pre-requisites for Floorplanning, P&R : PD Basic concepts </h1> </summary> 
 
 <h2> SOC </h2>
 A System on Chip (SoC) integrates various components and functionalities of a complete system, including processors, memory, peripherals, and interconnects, onto a single chip. This integration enables the development of compact, efficient, and high-performance systems.
@@ -954,6 +954,9 @@ Next, ensure that you are using the post-route netlist for the analysis. This ne
 A critical step in the process involves incorporating parasitic capacitance data from the SPEF (Standard Parasitic Exchange Format) file. This file contains information about the parasitic capacitance of the nets, which significantly impacts timing analysis.You need to read this SPEF file before generating the custom timing report. 
 
 We Finally, generate a custom timing report using the appropriate STA tool. 
+
+</details>
+
 
 <h2> Physical Design Lab: Floorlanning  </h2>
 Physical Design Flow refers to the process of converting a synthesized netlist and standard library into a layout based on design rules provided by the foundry, ultimately leading to chip creation. It aims to optimize wire length, area, and power.
