@@ -1018,11 +1018,23 @@ init_design.mcmm_example.auto-expanded.tcl
 
 <img width="1038" alt="Screenshot 2024-09-25 at 5 26 37 PM" src="https://github.com/user-attachments/assets/7ae1639c-f686-45e6-a0ba-14b4224e7704">
 
+<h2>Issues Faced </h2>
+
+We might face issues when setting routing layer. One way to solve this is to ensure that we use correct names for the metal layers as present in .tf files.
+
+![WhatsApp Image 2024-09-14 at 4 43 54 PM](https://github.com/user-attachments/assets/415f7577-0928-462a-aacc-a54a7ec12617)
+![WhatsApp Image 2024-09-14 at 4 47 08 PM](https://github.com/user-attachments/assets/74eae385-fa4d-448e-a7be-9de22f3a096a)
+![WhatsApp Image 2024-09-14 at 4 47 07 PM](https://github.com/user-attachments/assets/d25defd3-6a61-4c11-bb30-3a080279396c)
 
 
+Another issue that we might face is Design linking issues which can lead to a wierd problem where area of the core is zero.
+The way to deal with it is to first verify if you have set the paths correctly for the lef, tf and lib files.
+see if the design is properly loaded utilizing echo commands.
+Another issue can be unresolved references from the design which cannot match with any of the cells in the lib or lef files.
 
+![WhatsApp Image 2024-09-21 at 9 32 37 PM](https://github.com/user-attachments/assets/4b967dc2-ca7a-4064-a8e5-7c5e5835753e)
 
-
+![WhatsApp Image 2024-09-27 at 3 32 40 PM](https://github.com/user-attachments/assets/aeebecd7-5ab4-4447-bef3-430651226ca7)
 
 
 
