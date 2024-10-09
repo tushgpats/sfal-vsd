@@ -1038,11 +1038,42 @@ Another issue can be unresolved references from the design which cannot match wi
 ![WhatsApp Image 2024-09-27 at 3 32 40 PM](https://github.com/user-attachments/assets/aeebecd7-5ab4-4447-bef3-430651226ca7)
 
 
+<h2> Physical Design Lab: Placement and Routing  </h2>
+
+We can check for DRC Violations using the check_routes:
+
+```
+DRC-SUMMARY:
+$	@@@@@@@ TOTAL VIOLATIONS =	63
+$	Diff net spacing : 3
+$	Diff net via-cut spacing : 18
+$	Short : 42
 
 
-
-
-
+$ Total Wire Length =                    109143 micron
+$ Total Number of Contacts =             27934
+$ Total Number of Wires =                24346
+$ Total Number of PtConns =              241
+$ Total Number of Routed Wires =       24346
+$ Total Routed Wire Length =           109020 micron
+$ Total Number of Routed Contacts =       27934
+$	Layer          li1 :         60 micron
+$	Layer         met1 :      17902 micron
+$	Layer         met2 :      47346 micron
+$	Layer         met3 :      35012 micron
+$	Layer         met4 :       6331 micron
+$	Layer         met5 :       2492 micron
+$	Via        M4M5_PR :        443
+$	Via        M3M4_PR :       1421
+$	Via      M3M4_PR_C :         12
+$	Via        M2M3_PR :       5475
+$	Via   M2M3_PR(rot) :         23
+$	Via        M1M2_PR :      10771
+$	Via   M1M2_PR(rot) :         13
+$	Via        L1M1_PR :       8622
+$	Via   L1M1_PR(rot) :       1113
+$	Via      L1M1_PR_C :         41
+```
 
 
 
