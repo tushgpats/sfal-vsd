@@ -1234,8 +1234,7 @@ Nets with Violations:                42
 Max Trans Violations:                29
 Max Cap Violations:                  42
 ----------------------------------------
-
-
+```
 <h2> Physical Design Lab: STA  </h2>
 
 
