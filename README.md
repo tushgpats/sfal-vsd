@@ -1079,6 +1079,8 @@ Now We have to figure out a way to resolve these DRCs.
  We can try tweaking various factors such as Core Utilization, trying to make placement Congestion aware ; trying to optimize routing as well as making it density aware.
  Finally when DRC's are Considerably lower say 10-13 We can try other commands to clean drc.
 
+<img width="935" alt="Screenshot 2024-10-14 at 10 51 17 PM" src="https://github.com/user-attachments/assets/87eda856-c67c-4144-abf6-c9c27092e76f">
+
 Before:
 
 ```
