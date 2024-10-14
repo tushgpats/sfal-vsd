@@ -1044,52 +1044,111 @@ We can check for DRC Violations using the check_routes:
 
 ```
 DRC-SUMMARY:
-$	@@@@@@@ TOTAL VIOLATIONS =	63
-$	Diff net spacing : 3
-$	Diff net via-cut spacing : 18
-$	Short : 42
+	@@@@@@@ TOTAL VIOLATIONS =	63
+	Diff net spacing : 3
+	Diff net via-cut spacing : 18
+	Short : 42
 
 
-$ Total Wire Length =                    109143 micron
-$ Total Number of Contacts =             27934
-$ Total Number of Wires =                24346
-$ Total Number of PtConns =              241
-$ Total Number of Routed Wires =       24346
-$ Total Routed Wire Length =           109020 micron
-$ Total Number of Routed Contacts =       27934
-$	Layer          li1 :         60 micron
-$	Layer         met1 :      17902 micron
-$	Layer         met2 :      47346 micron
-$	Layer         met3 :      35012 micron
-$	Layer         met4 :       6331 micron
-$	Layer         met5 :       2492 micron
-$	Via        M4M5_PR :        443
-$	Via        M3M4_PR :       1421
-$	Via      M3M4_PR_C :         12
-$	Via        M2M3_PR :       5475
-$	Via   M2M3_PR(rot) :         23
-$	Via        M1M2_PR :      10771
-$	Via   M1M2_PR(rot) :         13
-$	Via        L1M1_PR :       8622
-$	Via   L1M1_PR(rot) :       1113
-$	Via      L1M1_PR_C :         41
+ Total Wire Length =                    109143 micron
+ Total Number of Contacts =             27934
+ Total Number of Wires =                24346
+ Total Number of PtConns =              241
+ Total Number of Routed Wires =       24346
+ Total Routed Wire Length =           109020 micron
+ Total Number of Routed Contacts =       27934
+	Layer          li1 :         60 micron
+	Layer         met1 :      17902 micron
+	Layer         met2 :      47346 micron
+	Layer         met3 :      35012 micron
+	Layer         met4 :       6331 micron
+	Layer         met5 :       2492 micron
+	Via        M4M5_PR :        443
+	Via        M3M4_PR :       1421
+	Via      M3M4_PR_C :         12
+	Via        M2M3_PR :       5475
+	Via   M2M3_PR(rot) :         23
+	Via        M1M2_PR :      10771
+	Via   M1M2_PR(rot) :         13
+	Via        L1M1_PR :       8622
+	Via   L1M1_PR(rot) :       1113
+	Via      L1M1_PR_C :         41
 ```
 
+Now We have to figure out a way to resolve these DRCs.
+ We can try tweaking various factors such as Core Utilization, trying to make placement Congestion aware ; trying to optimize routing as well as making it density aware.
+ Finally when DRC's are Considerably lower say 10-13 We can try other commands to clean drc.
+
+Before:
+
+```
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	12
+	Diff net spacing : 3
+	Diff net via-cut spacing : 1
+	Short : 8
 
 
+Total Wire Length =                    106696 micron
+Total Number of Contacts =             27331
+Total Number of Wires =                23579
+Total Number of PtConns =              235
+Total Number of Routed Wires =       23579
+Total Routed Wire Length =           106584 micron
+Total Number of Routed Contacts =       27331
+	Layer          li1 :         41 micron
+	Layer         met1 :      17842 micron
+	Layer         met2 :      46132 micron
+	Layer         met3 :      34262 micron
+	Layer         met4 :       5973 micron
+	Layer         met5 :       2446 micron
+	Via        M4M5_PR :        424
+	Via        M3M4_PR :       1328
+	Via        M2M3_PR :       5268
+	Via        M1M2_PR :      10563
+	Via   M1M2_PR(rot) :          5
+	Via        L1M1_PR :       8490
+	Via   L1M1_PR(rot) :       1210
+	Via      L1M1_PR_C :         43
+
+```
+
+Now that we have hit the zone of stalled improvement where the DRCs just dont seem to resolve we now have to 
+intervene manually to get this DRC issue sorted. The command for this is 
+
+```
+route_detail -initial_drc_from_input true
+```
+
+After:
+
+```
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	0
 
 
-
-
-
-
-
-
-
-
-
-
-
+Total Wire Length =                    106709 micron
+Total Number of Contacts =             27336
+Total Number of Wires =                23580
+Total Number of PtConns =              236
+Total Number of Routed Wires =       23580
+Total Routed Wire Length =           106596 micron
+Total Number of Routed Contacts =       27336
+	Layer          li1 :         37 micron
+	Layer         met1 :      17845 micron
+	Layer         met2 :      46134 micron
+	Layer         met3 :      34263 micron
+	Layer         met4 :       5985 micron
+	Layer         met5 :       2446 micron
+	Via        M4M5_PR :        424
+	Via        M3M4_PR :       1330
+	Via        M2M3_PR :       5268
+	Via        M1M2_PR :      10566
+	Via   M1M2_PR(rot) :          5
+	Via        L1M1_PR :       8490
+	Via   L1M1_PR(rot) :       1210
+	Via      L1M1_PR_C :         43
+```
 
 
 
