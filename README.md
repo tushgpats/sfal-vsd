@@ -1236,3 +1236,12 @@ Max Cap Violations:                  42
 ----------------------------------------
 
 ```
+
+After routing is completed, in icc2_shell, we can extract parasitics information in .SPEF format by using following command :
+```
+write_parasitics -corner func1 -output /home/ganesh/ICC2Exp/VSDBabySoC_ICC2/standaloneFlow/vsdbabysoc_parasitics
+```
+
+SPEF File:
+
+<img width="1063" alt="Screenshot 2024-10-14 at 8 19 31 PM" src="https://github.com/user-attachments/assets/21866a5d-5512-4b85-bbb8-89e50858778c">
