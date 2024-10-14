@@ -1245,7 +1245,7 @@ write_parasitics -corner func1 -output /home/ganesh/ICC2Exp/VSDBabySoC_ICC2/stan
 
 SPEF File:
 
-<img width="1063" alt="Screenshot 2024-10-14 at 8 19 31 PM" src="https://github.com/user-attachments/assets/21866a5d-5512-4b85-bbb8-89e50858778c">
+<img width="1063" alt="Screenshot 2024-10-14 at 8 19 31 PM" src="https://github.com/user-attachments/assets/d94cb86b-d532-43b5-ba30-fce879402bac">
 
 We now write out the post_route netlist :
 
