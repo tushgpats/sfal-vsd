@@ -1235,6 +1235,9 @@ Max Trans Violations:                29
 Max Cap Violations:                  42
 ----------------------------------------
 
+
+<h2> Physical Design Lab: STA  </h2>
+
 ```
 
 After routing is completed, in icc2_shell, we can extract parasitics information in .SPEF format by using following command :
