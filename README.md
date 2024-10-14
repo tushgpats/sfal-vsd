@@ -1150,7 +1150,89 @@ Total Number of Routed Contacts =       27336
 	Via      L1M1_PR_C :         43
 ```
 
+```
+****************************************
+Report : qor
+Design : vsdbabysoc
+Version: T-2022.03-SP5
+Date   : Mon Oct 14 07:27:58 2024
+****************************************
 
 
+Scenario           'func1::estimated_corner'
+Timing Path Group  'default'
+----------------------------------------
+Levels of Logic:                      1
+Critical Path Length:              0.08
+Critical Path Slack:               9.92
+Critical Path Clk Period:            --
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+----------------------------------------
+
+Scenario           'func1::estimated_corner'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                     40
+Critical Path Length:              9.25
+Critical Path Slack:               0.18
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+----------------------------------------
 
 
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:              1
+Hierarchical Port Count:             14
+Leaf Cell Count:                   2743
+Buf/Inv Cell Count:                 578
+Buf Cell Count:                       2
+Inv Cell Count:                     576
+CT Buf/Inv Cell Count:                0
+Combinational Cell Count:          2067
+   Single-bit Isolation Cell Count:                        0
+   Multi-bit Isolation Cell Count:                         0
+   Isolation Cell Banking Ratio:                           0.00%
+   Single-bit Level Shifter Cell Count:                    0
+   Multi-bit Level Shifter Cell Count:                     0
+   Level Shifter Cell Banking Ratio:                       0.00%
+   Single-bit ELS Cell Count:                              0
+   Multi-bit ELS Cell Count:                               0
+   ELS Cell Banking Ratio:                                 0.00%
+Sequential Cell Count:              676
+   Integrated Clock-Gating Cell Count:                     0
+   Sequential Macro Cell Count:                            0
+   Single-bit Sequential Cell Count:                       676
+   Multi-bit Sequential Cell Count:                        0
+   Sequential Cell Banking Ratio:                          0.00%
+   BitsPerflop:                                            1.00
+Macro Count:                          2
+----------------------------------------
+Area
+----------------------------------------
+Combinational Area:            11407.19
+Noncombinational Area:         13532.98
+Buf/Inv Area:                   2169.58
+Total Buffer Area:                 7.51
+Total Inverter Area:            2162.07
+Macro/Black Box Area:         671652.37
+Net Area:                             0
+Net XLength:                   50313.72
+Net YLength:                   48865.19
+----------------------------------------
+Cell Area (netlist):                         696592.54
+Cell Area (netlist and physical only):       696592.55
+Net Length:                    99178.91
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:              2993
+Nets with Violations:                42
+Max Trans Violations:                29
+Max Cap Violations:                  42
+----------------------------------------
+
+```
