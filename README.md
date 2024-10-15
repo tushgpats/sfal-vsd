@@ -1079,11 +1079,29 @@ Now We have to figure out a way to resolve these DRCs.
  We can try tweaking various factors such as Core Utilization, trying to make placement Congestion aware ; trying to optimize routing as well as making it density aware.
  Finally when DRC's are Considerably lower say 10-13 We can try other commands to clean drc.
 
+ I tried Multiple things with varying degrees of sucess. The First thing that i tried to tweak was the Core Utilization. The Core Utilization was varied from 0.42 to 0.47. The numbar of DRCs were low for 0.43 and 0.45 with 0.45 giving the best DRC count of 13. 
+
+ I then Tried making placement congestion aware as well as tweaking the number of routing iterations from the original 5 to new vaule of 6. 
+ I then made the route_detail setting desity aware as well which drastically reduced DRC's to 10.
+ However it did make congestion Worse so i set the route_detail to both density aware as well as congestion aware which gave a decent outcome of 12 DRCs balancing density and congestion.
+ 
+
 <img width="935" alt="Screenshot 2024-10-14 at 10 51 17 PM" src="https://github.com/user-attachments/assets/87eda856-c67c-4144-abf6-c9c27092e76f">
 
 The research indicates that more DRC violations are typically caused by higher levels of congestion. The highest congestion, with 317 total overflows, is associated with the highest DRC count of 40 for core usage of 0.47. Likewise, the DRC count decreases to 29 when core usage is at 0.42 and congestion is smaller (200 overflows). This pattern highlights the necessity of attentive congestion management to lower DRC counts by showing a clear correlation between rising congestion and an increase in DRC violations.
 
 There are also instances, nevertheless, in which there is a different direct association between congestion and DRC infractions. For example, at 0.44 core utilization, the DRC count is surprisingly higher at 30 compared to lower congestion at 0.46 utilization with 21 violations, even though there is more congestion with 265 overflows. These differences imply that DRC counts may be significantly influenced by variables other than congestion levels, such as cable length, routing quality, or particular design limitations.
+
+
+Now that we have hit the zone of stalled improvement where the DRCs just dont seem to resolve we now have to 
+intervene manually to get this DRC issue sorted. The command for this is 
+
+```
+route_detail -initial_drc_from_input true
+```
+
+The -initial_drc_from_input true | false option determines whether the router uses pre-existing DRC information stored in the block or performs a fresh check. 
+By default, the router checks the entire block for design rule violations and fixes them. When set to true, the router tries to correct violations using the DRC data that is stored in the block, bypassing the DRC check. Use this option sparingly and only if you are positive that the DRC data you have stored is correct and current.
 
 Before:
 
@@ -1117,13 +1135,6 @@ Total Number of Routed Contacts =       27331
 	Via   L1M1_PR(rot) :       1210
 	Via      L1M1_PR_C :         43
 
-```
-
-Now that we have hit the zone of stalled improvement where the DRCs just dont seem to resolve we now have to 
-intervene manually to get this DRC issue sorted. The command for this is 
-
-```
-route_detail -initial_drc_from_input true
 ```
 
 After:
