@@ -1081,6 +1081,10 @@ Now We have to figure out a way to resolve these DRCs.
 
 <img width="935" alt="Screenshot 2024-10-14 at 10 51 17 PM" src="https://github.com/user-attachments/assets/87eda856-c67c-4144-abf6-c9c27092e76f">
 
+The research indicates that more DRC violations are typically caused by higher levels of congestion. The highest congestion, with 317 total overflows, is associated with the highest DRC count of 40 for core usage of 0.47. Likewise, the DRC count decreases to 29 when core usage is at 0.42 and congestion is smaller (200 overflows). This pattern highlights the necessity of attentive congestion management to lower DRC counts by showing a clear correlation between rising congestion and an increase in DRC violations.
+
+There are also instances, nevertheless, in which there is a different direct association between congestion and DRC infractions. For example, at 0.44 core utilization, the DRC count is surprisingly higher at 30 compared to lower congestion at 0.46 utilization with 21 violations, even though there is more congestion with 265 overflows. These differences imply that DRC counts may be significantly influenced by variables other than congestion levels, such as cable length, routing quality, or particular design limitations.
+
 Before:
 
 ```
