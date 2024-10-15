@@ -1035,7 +1035,7 @@ Another issue can be unresolved references from the design which cannot match wi
 
 ![WhatsApp Image 2024-09-21 at 9 32 37 PM](https://github.com/user-attachments/assets/4b967dc2-ca7a-4064-a8e5-7c5e5835753e)
 
-![WhatsApp Image 2024-09-27 at 3 32 40 PM](https://github.com/user-attachments/assets/aeebecd7-5ab4-4447-bef3-430651226ca7)
+
 
 
 <h2> Physical Design Lab: Placement and Routing  </h2>
