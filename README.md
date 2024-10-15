@@ -1080,12 +1080,24 @@ Now We have to figure out a way to resolve these DRCs.
  Finally when DRC's are Considerably lower say 10-13 We can try other commands to clean drc.
 
  I tried Multiple things with varying degrees of sucess. The First thing that i tried to tweak was the Core Utilization. The Core Utilization was varied from 0.42 to 0.47. The numbar of DRCs were low for 0.43 and 0.45 with 0.45 giving the best DRC count of 13. 
-
- I then Tried making placement congestion aware as well as tweaking the number of routing iterations from the original 5 to new vaule of 6. 
- I then made the route_detail setting desity aware as well which drastically reduced DRC's to 10.
- However it did make congestion Worse so i set the route_detail to both density aware as well as congestion aware which gave a decent outcome of 12 DRCs balancing density and congestion.
  
+<img width="1440" alt="Screenshot 2024-10-15 at 2 28 40 PM" src="https://github.com/user-attachments/assets/ff9cd58a-d0ab-4760-8c30-f1be7322f878">
 
+ I then Tried making routing congestion aware as well as tweaking the number of routing iterations from the original 5 to new vaule of 6. 
+ 
+```
+route_auto -max_detail_route_iterations 6 
+```
+
+ I then made the placement setting desity aware as well which drastically reduced DRC's to 10.
+
+```
+set_app_options -name place.coarse.auto_density_control -value true
+```
+
+ However it did make congestion Worse so i set the placement setting to both the previouscontinue_on_missing_scandef as well as density aware place.coarse.auto_density_control  which gave a decent outcome of 12 DRCs balanced output.
+ 
+  
 <img width="935" alt="Screenshot 2024-10-14 at 10 51 17 PM" src="https://github.com/user-attachments/assets/87eda856-c67c-4144-abf6-c9c27092e76f">
 
 The research indicates that more DRC violations are typically caused by higher levels of congestion. The highest congestion, with 317 total overflows, is associated with the highest DRC count of 40 for core usage of 0.47. Likewise, the DRC count decreases to 29 when core usage is at 0.42 and congestion is smaller (200 overflows). This pattern highlights the necessity of attentive congestion management to lower DRC counts by showing a clear correlation between rising congestion and an increase in DRC violations.
