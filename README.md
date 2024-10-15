@@ -1181,31 +1181,55 @@ Total Number of Routed Contacts =       27336
 
 Observations and Possible Reasons:
 
+
 li1 Layer Wire Length:
+
 Before: 41 microns
+
 After: 37 microns
+
 Change: Decreased by 4 microns.
+
 met1 Layer Wire Length:
+
 Before: 17,842 microns
+
 After: 17,844 microns
+
 Change: Increased by 2 microns.
+
 met2 Layer Wire Length:
+
 Before: 46,132 microns
+
 After: 46,134 microns
+
 Change: Increased by 2 microns.
+
 met4 Layer Wire Length:
+
 Before: 5,973 microns
+
 After: 5,985 microns
+
 Change: Increased by 12 microns.
 
 
+
 M3M4_PR Via Count:
+
 Before: 1,328 vias
+
 After: 1,330 vias
+
 Change: Increased by 2 vias.
+
 M1M2_PR Via Count:
+
 Before: 10,563 vias
+
 After: 10,566 vias
+
 Change: Increased by 3 vias.
 
 
