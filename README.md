@@ -1179,6 +1179,40 @@ Total Number of Routed Contacts =       27336
 	Via      L1M1_PR_C :         43
 ```
 
+Observations and Possible Reasons:
+
+li1 Layer Wire Length:
+Before: 41 microns
+After: 37 microns
+Change: Decreased by 4 microns.
+met1 Layer Wire Length:
+Before: 17,842 microns
+After: 17,844 microns
+Change: Increased by 2 microns.
+met2 Layer Wire Length:
+Before: 46,132 microns
+After: 46,134 microns
+Change: Increased by 2 microns.
+met4 Layer Wire Length:
+Before: 5,973 microns
+After: 5,985 microns
+Change: Increased by 12 microns.
+
+
+M3M4_PR Via Count:
+Before: 1,328 vias
+After: 1,330 vias
+Change: Increased by 2 vias.
+M1M2_PR Via Count:
+Before: 10,563 vias
+After: 10,566 vias
+Change: Increased by 3 vias.
+
+
+The Total Wire length and the number of Contacts have increased Slightly after running the route_detail command; eliminating all DRCs in the design.
+This suggests that the routing tool adjusted some wire paths and vias, possibly rerouting or optimizing certain connections to resolve DRCs.
+The increased length of wires, number of contacts, and minor adjustments to certain layers' wire lengths seems to have enabled the router to refine its routing and address spacing violations and shorts.
+
 ```
 ****************************************
 Report : qor
