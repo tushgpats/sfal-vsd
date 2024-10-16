@@ -1090,6 +1090,8 @@ Now We have to figure out a way to resolve these DRCs.
 
 ![WhatsApp Image 2024-10-16 at 09 51 31](https://github.com/user-attachments/assets/377fa839-685b-4453-8aa1-23bbd72b5ba1)
 
+<img width="935" alt="Screenshot 2024-10-14 at 10 51 17 PM" src="https://github.com/user-attachments/assets/af99b5a2-daaa-4f12-8901-dca5af2503e6">
+
 
 Here's a brief analysis of each chart showing how Core Utilization at floorplan affects different metrics, particularly focusing on DRC (Design Rule Check) violations and routing congestion:
 1. Total DRC Violations vs Core Utilization
@@ -1135,7 +1137,7 @@ There are also instances, nevertheless, in which there is a different direct ass
 
 
 Now that we have hit the zone of stalled improvement where the DRCs just dont seem to resolve we now have to 
-intervene manually to get this DRC issue sorted. The command for this is  I then Tried making routing congestion aware as well as tweaking the number of routing iterations from the original 5 to new vaule of 6. 
+intervene manually to get this DRC issue sorted. The command for this is 
  
 ```
 route_auto -max_detail_route_iterations 6 
@@ -1151,10 +1153,6 @@ set_app_options -name place.coarse.auto_density_control -value true
  
   
 <img width="935" alt="Screenshot 2024-10-14 at 10 51 17 PM" src="https://github.com/user-attachments/assets/87eda856-c67c-4144-abf6-c9c27092e76f">
-
-The research indicates that more DRC violations are typically caused by higher levels of congestion. The highest congestion, with 317 total overflows, is associated with the highest DRC count of 40 for core usage of 0.47. Likewise, the DRC count decreases to 29 when core usage is at 0.42 and congestion is smaller (200 overflows). This pattern highlights the necessity of attentive congestion management to lower DRC counts by showing a clear correlation between rising congestion and an increase in DRC violations.
-
-There are also instances, nevertheless, in which there is a different direct association between congestion and DRC infractions. For example, at 0.44 core utilization, the DRC count is surprisingly higher at 30 compared to lower congestion at 0.46 utilization with 21 violations, even though there is more congestion with 265 overflows. These differences imply that DRC counts may be significantly influenced by variables other than congestion levels, such as cable length, routing quality, or particular design limitations.
 
 
 Now that we have hit the zone of stalled improvement where the DRCs just dont seem to resolve we now have to 
