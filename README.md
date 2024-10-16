@@ -958,7 +958,14 @@ We Finally, generate a custom timing report using the appropriate STA tool.
 </details>
 
 
-<h2> Physical Design Lab: Floorlanning  </h2>
+<h2> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs </h2>
+
+Abstract - The project aims to design and analyze a mixed-signal System-on-Chip (SoC) that integrates a RISC-V processor with two custom analog IPs. It focuses on overcoming design challenges like congestion and Design Rule Check (DRC) violations to ensure an optimized layout. The analog IPs could involve components such as ADCs, PLLs, or comparators, interfacing seamlessly with the digital RISC-V core. Special attention will be given to the interaction between digital and analog blocks, ensuring noise isolation and minimal coupling, while maintaining adherence to PDK constraints.
+
+<h3> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs : Initial Flow Setup  </h3>
+
+Abstract - The project aims to design and analyze a mixed-signal System-on-Chip (SoC) that integrates a RISC-V processor with two custom analog IPs. It focuses on overcoming design challenges like congestion and Design Rule Check (DRC) violations to ensure an optimized layout. The analog IPs could involve components such as ADCs, PLLs, or comparators, interfacing seamlessly with the digital RISC-V core. Special attention will be given to the interaction between digital and analog blocks, ensuring noise isolation and minimal coupling, while maintaining adherence to PDK constraints.
+
 Physical Design Flow refers to the process of converting a synthesized netlist and standard library into a layout based on design rules provided by the foundry, ultimately leading to chip creation. It aims to optimize wire length, area, and power.
 
 
@@ -1036,9 +1043,7 @@ Another issue can be unresolved references from the design which cannot match wi
 ![WhatsApp Image 2024-09-21 at 9 32 37 PM](https://github.com/user-attachments/assets/4b967dc2-ca7a-4064-a8e5-7c5e5835753e)
 
 
-
-
-<h2> Physical Design Lab: Placement and Routing  </h2>
+<h3>Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs : DRC Compliant Placement and Routing   </h3>
 
 We can check for DRC Violations using the check_routes:
 
@@ -1082,6 +1087,48 @@ Now We have to figure out a way to resolve these DRCs.
  I tried Multiple things with varying degrees of sucess. The First thing that i tried to tweak was the Core Utilization. The Core Utilization was varied from 0.42 to 0.47. The numbar of DRCs were low for 0.43 and 0.45 with 0.45 giving the best DRC count of 13. 
  
 <img width="1440" alt="Screenshot 2024-10-15 at 2 28 40 PM" src="https://github.com/user-attachments/assets/ff9cd58a-d0ab-4760-8c30-f1be7322f878">
+
+![WhatsApp Image 2024-10-16 at 09 51 31](https://github.com/user-attachments/assets/377fa839-685b-4453-8aa1-23bbd72b5ba1)
+
+
+Here's a brief analysis of each chart showing how Core Utilization at floorplan affects different metrics, particularly focusing on DRC (Design Rule Check) violations and routing congestion:
+1. Total DRC Violations vs Core Utilization
+•	As Core Utilization increases, total DRC violations fluctuate.
+•	Higher utilization can increase pressure on routing resources and spacing, leading to more DRC violations. However, small dips at certain points indicate efficient floorplanning can help reduce violations.
+2. Diff Net Spacing vs Core Utilization
+•	Diff Net Spacing increases with core utilization.
+•	As utilization approaches 0.46 and 0.47, spacing issues arise. Congested floorplans with higher utilization limit the room available for differential nets, leading to spacing-related DRC violations.
+3. Diff Net Via-Cut Spacing vs Core Utilization
+•	Via-cut spacing violations show spikes at higher utilization (0.47).
+•	With dense cores, maintaining proper via spacing becomes harder, creating via-related violations, which impacts manufacturability and reliability of chip connections.
+4. Shorts vs Core Utilization
+•	Shorts tend to increase with higher utilization (e.g., peaks at 0.44 and 0.47).
+•	As routing resources become scarce, nets run closer, increasing the chance of short-circuit violations. Optimized floorplans can keep short violations under control.
+5. Both Directions Overflow Total vs Core Utilization
+•	Overflow increases at 0.44, 0.45, and 0.47, suggesting that higher utilization congests both horizontal and vertical routing layers.
+•	When overflow totals are high, it indicates routing congestion, forcing paths to detour and creating potential DRC violations.
+6. Both Directions Max Overflow vs Core Utilization
+•	The max overflow remains consistent but increases slightly at higher utilizations.
+•	Persistent max overflow indicates tight floorplans where some sections exceed capacity in both directions, stressing routing and violating DRC rules.
+7. H Routing Overflow Total vs Core Utilization
+•	Horizontal overflow worsens as utilization increases to 0.45 and 0.47.
+•	This suggests that horizontal routing resources are more stressed under higher utilization, contributing to routing bottlenecks and potential DRC violations.
+8. H Routing Max Overflow vs Core Utilization
+•	Similar to the total horizontal overflow trend, max overflow peaks multiple times, especially at higher utilizations (e.g., 0.47).
+•	This implies that high utilization leads to local congestion points where horizontal routes are over-utilized.
+9. V Routing Overflow Total vs Core Utilization
+•	Vertical routing overflow also increases, though the trend is less pronounced than horizontal routing.
+•	High vertical overflow indicates limited via layers or inefficient floorplan design, which forces signals to compete for routing resources.
+10. V Routing Max Overflow vs Core Utilization
+•	Vertical max overflow shows sharp peaks at 0.44, 0.45, and 0.47, suggesting significant congestion at those utilization points.
+•	This reflects issues with layer resources or design constraints that prevent vertical routing from functioning efficiently, leading to violations.
+Summary:
+•	Higher Core Utilization (beyond 0.45) leads to:
+o	Increased DRC violations related to spacing, shorts, and via-cuts.
+o	Routing congestion increases as overflow worsens, especially in horizontal routes.
+o	Efficient floorplanning and careful resource management are crucial to limit violations and manage congestion.
+These charts highlight the trade-off between maximizing core utilization and managing DRCs and routing congestion—critical aspects in VLSI design that directly impact manufacturability and chip performance.
+![image](https://github.com/user-attachments/assets/3d586d7a-7c43-410b-9dc4-8c3bac3db247)
 
  I then Tried making routing congestion aware as well as tweaking the number of routing iterations from the original 5 to new vaule of 6. 
  
