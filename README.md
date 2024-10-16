@@ -1128,9 +1128,14 @@ o	Increased DRC violations related to spacing, shorts, and via-cuts.
 o	Routing congestion increases as overflow worsens, especially in horizontal routes.
 o	Efficient floorplanning and careful resource management are crucial to limit violations and manage congestion.
 These charts highlight the trade-off between maximizing core utilization and managing DRCs and routing congestion—critical aspects in VLSI design that directly impact manufacturability and chip performance.
-![image](https://github.com/user-attachments/assets/3d586d7a-7c43-410b-9dc4-8c3bac3db247)
 
- I then Tried making routing congestion aware as well as tweaking the number of routing iterations from the original 5 to new vaule of 6. 
+The research indicates that more DRC violations are typically caused by higher levels of congestion. The highest congestion, with 317 total overflows, is associated with the highest DRC count of 40 for core usage of 0.47. Likewise, the DRC count decreases to 29 when core usage is at 0.42 and congestion is smaller (200 overflows). This pattern highlights the necessity of attentive congestion management to lower DRC counts by showing a clear correlation between rising congestion and an increase in DRC violations.
+
+There are also instances, nevertheless, in which there is a different direct association between congestion and DRC infractions. For example, at 0.44 core utilization, the DRC count is surprisingly higher at 30 compared to lower congestion at 0.46 utilization with 21 violations, even though there is more congestion with 265 overflows. These differences imply that DRC counts may be significantly influenced by variables other than congestion levels, such as cable length, routing quality, or particular design limitations.
+
+
+Now that we have hit the zone of stalled improvement where the DRCs just dont seem to resolve we now have to 
+intervene manually to get this DRC issue sorted. The command for this is  I then Tried making routing congestion aware as well as tweaking the number of routing iterations from the original 5 to new vaule of 6. 
  
 ```
 route_auto -max_detail_route_iterations 6 
