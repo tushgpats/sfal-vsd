@@ -1042,6 +1042,25 @@ Another issue can be unresolved references from the design which cannot match wi
 
 ![WhatsApp Image 2024-09-21 at 9 32 37 PM](https://github.com/user-attachments/assets/4b967dc2-ca7a-4064-a8e5-7c5e5835753e)
 
+Once all the Issues regarding the files are resolved, things should run smoothly. The Output looks as follows.
+
+Full Chip:
+
+<img width="1437" alt="Screenshot 2024-10-06 at 5 44 55 PM" src="https://github.com/user-attachments/assets/58559f47-a409-4ba1-8150-a119005410b6">
+
+PLL:
+
+<img width="1235" alt="Screenshot 2024-10-08 at 4 24 05 PM" src="https://github.com/user-attachments/assets/cf74d7d7-4967-4b04-b8d4-39422bc6febe">
+
+post-route design with metal layers connecting standard cell routes/connections :
+
+<img width="1440" alt="Screenshot 2024-10-09 at 5 07 44 AM" src="https://github.com/user-attachments/assets/1f968e6a-6311-46e4-b00a-7931f61381e8">
+
+
+Proper Filler Cells used :
+
+<img width="1439" alt="Screenshot 2024-10-06 at 4 11 04 PM" src="https://github.com/user-attachments/assets/a97a9559-b3ad-47ef-978a-65350b5ad54d">
+
 
 <h3>Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs : DRC Compliant Placement and Routing   </h3>
 
