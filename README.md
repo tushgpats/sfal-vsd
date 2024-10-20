@@ -1064,6 +1064,11 @@ Proper Filler Cells used :
 
 <h3>Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs : DRC Compliant Placement and Routing   </h3>
 
+Min & Max Routing Layer,set up in icc2_common_setup.tcl & top.tcl :
+
+<img width="1064" alt="Screenshot 2024-10-09 at 6 05 40 AM" src="https://github.com/user-attachments/assets/b84d6a90-d214-48ae-9d21-2a2f02301fa3">
+<img width="1064" alt="Screenshot 2024-10-09 at 6 05 51 AM" src="https://github.com/user-attachments/assets/13b3a85b-4956-4c8d-b157-7803c9f07f45">
+
 We can check for DRC Violations using the check_routes:
 
 ```
