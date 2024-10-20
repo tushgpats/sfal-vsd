@@ -1248,58 +1248,26 @@ Total Number of Routed Contacts =       27336
 	Via      L1M1_PR_C :         43
 ```
 
+![WhatsApp Image 2024-10-16 at 21 06 52](https://github.com/user-attachments/assets/091a9967-43ab-4caa-89fe-9d97ba4a7225)
+
+![WhatsApp Image 2024-10-16 at 21 06 59](https://github.com/user-attachments/assets/bc57cfc5-5de2-4993-bcdb-21fc76fa657d)
+
+![WhatsApp Image 2024-10-16 at 21 07 07](https://github.com/user-attachments/assets/1cbcba12-ea84-40c1-86b8-e744933fe7c4)
+
+![WhatsApp Image 2024-10-16 at 21 07 24](https://github.com/user-attachments/assets/3e720ca2-4c4b-40ca-8c1a-8baebedb7419)
+
+![WhatsApp Image 2024-10-16 at 21 07 35](https://github.com/user-attachments/assets/85da81ac-67ec-4599-86f6-e07d381312c7)
+
+![WhatsApp Image 2024-10-16 at 21 07 43](https://github.com/user-attachments/assets/e9b38ca3-4a4f-44e3-ac1a-cc5de49ef8d0)
+
+![WhatsApp Image 2024-10-16 at 21 07 53](https://github.com/user-attachments/assets/1b7425e7-8677-4a4c-b26b-37641333f797)
+
+
+![WhatsApp Image 2024-10-16 at 20 41 12](https://github.com/user-attachments/assets/5b8c18bc-7ca5-49a2-aa6c-71417ada8e38)
+
 Observations and Possible Reasons:
 
-
-li1 Layer Wire Length:
-
-Before: 41 microns
-
-After: 37 microns
-
-Change: Decreased by 4 microns.
-
-met1 Layer Wire Length:
-
-Before: 17,842 microns
-
-After: 17,844 microns
-
-Change: Increased by 2 microns.
-
-met2 Layer Wire Length:
-
-Before: 46,132 microns
-
-After: 46,134 microns
-
-Change: Increased by 2 microns.
-
-met4 Layer Wire Length:
-
-Before: 5,973 microns
-
-After: 5,985 microns
-
-Change: Increased by 12 microns.
-
-
-
-M3M4_PR Via Count:
-
-Before: 1,328 vias
-
-After: 1,330 vias
-
-Change: Increased by 2 vias.
-
-M1M2_PR Via Count:
-
-Before: 10,563 vias
-
-After: 10,566 vias
-
-Change: Increased by 3 vias.
+<img width="734" alt="Screenshot 2024-10-20 at 5 26 51 AM" src="https://github.com/user-attachments/assets/73ab1d93-83c1-4d75-8590-c26ddde30329">
 
 
 The Total Wire length and the number of Contacts have increased Slightly after running the route_detail command; eliminating all DRCs in the design.
@@ -1391,7 +1359,7 @@ Max Trans Violations:                29
 Max Cap Violations:                  42
 ----------------------------------------
 ```
-<h2> Physical Design Lab: STA  </h2>
+<h2> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs: STA  </h2>
 
 
 After routing is completed, in icc2_shell, we can extract parasitics information in .SPEF format by using following command :
