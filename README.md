@@ -1263,6 +1263,14 @@ Total Number of Routed Contacts =       27336
 ![WhatsApp Image 2024-10-16 at 21 07 53](https://github.com/user-attachments/assets/1b7425e7-8677-4a4c-b26b-37641333f797)
 
 
+The number of DRCs decreases significantly when the route_auto -max_detail_route_iterations 6 setting is applied, indicating that optimizing the routing iterations is effective.
+However, with higher placement effort (medium and high), the DRCs start increasing, showing diminishing returns with additional effort.
+While the value remains mostly constant, the overflow drops drastically with high placement effort. This could indicate that congestion-aware placement strategies manage routing paths effectively. horizontal routing shows minimal variation except for the high placement effort, where the overflow drops to zero. 
+Vertical routing shows similar trends as horizontal routing, with the highest overflow consistency across different settings. However, advanced placement strategies momentarily reduce congestion here as well.
+
+The investigation demonstrates that optimal routing iterations result in the largest DRC decrease, particularly with no placement assistance. Advanced placement techniques (such as high effort) don't always translate into fewer DRCs, even though they might lessen congestion. This emphasizes that in order to accomplish both congestion control and minimal DRCs, routing iterations and placement configurations must be balanced.
+
+
 ![WhatsApp Image 2024-10-16 at 20 41 12](https://github.com/user-attachments/assets/5b8c18bc-7ca5-49a2-aa6c-71417ada8e38)
 
 Observations and Possible Reasons:
