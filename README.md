@@ -2213,3 +2213,13 @@ We now use the route_eco command to perform ECO (Engineering Change Order) routi
 
 
 ```
+<h2>  Acknowledgements  </h2>
+
+Firstly, I would like to extend my heartfelt gratitude to VSD and SFAL, for their invaluable guidance and support throughout the VSD SoC Design and Planning training. Huge shoutout to Mr. Kunal Ghosh, founder of VSD for his invaluable guidance and support throughout the training. A particular highlight of the program is Kunal’s uncanny ability to elucidate even the most recondite terms in simple, understandable language.
+
+I would also like to extend my thanks to Subhasis Sahu for his invaulable hints while performing the labs. 
+https://github.com/Subhasis-Sahu/SFAL-VSD?tab=readme-ov-file 
+
+Also one of the Key Acknowledgements to Devipriya A. Her Repo proved to be a invaluable reference. 
+https://github.com/Devipriya1921/VSDBabySoC_ICC2
+
