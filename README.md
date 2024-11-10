@@ -1372,7 +1372,7 @@ Max Trans Violations:                29
 Max Cap Violations:                  42
 ----------------------------------------
 ```
-<h2> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs: STA  </h2>
+<h2> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs: CTS Optimization and STA  </h2>
 
 
 After routing is completed, in icc2_shell, we can extract parasitics information in .SPEF format by using following command :
@@ -1584,7 +1584,17 @@ Date   : Fri Oct 18 09:11:27 2024
 
 ```
 
-We Now try to fix the issue of with ideal clock and cts stage to optimize it further.
+<h3> Key Learning : CTS Optimization  </h3>
+We Changed the clocks in sdc constraint files with Propogated Clocks and expected the issue to resolve itself But lo and behold, once we did that we still kept on facing the same issue. 
+
+![WhatsApp Image 2024-10-22 at 2 59 02 PM](https://github.com/user-attachments/assets/dc5a8d58-fbf9-45c2-b4e0-e4378c440f11)
+
+The clock despite being constrained in the sdc file to be propogated were behaving in an ideal manner. This was very peculiar behaviour and we then set to investigate what could be the reason for this. So we set out to investigate.  
+
+We decided to run the flow by manually entering parts of script one by one Upon and observing the output. We suspected that there might be some issues with CTS Further investigation 
+
+![WhatsApp Image 2024-11-01 at 3 54 10 PM](https://github.com/user-attachments/assets/528c7a3a-4703-47dc-baff-b5cbce69a960)
+
 
 ```
 
@@ -2071,6 +2081,14 @@ Date   : Fri Nov  8 12:43:15 2024
 ```
 
 ![output (7)](https://github.com/user-attachments/assets/a2b2550f-87d5-4506-992b-62772ce86159)
+
+
+Sources:
+https://www.linkedin.com/posts/prince-gupta-8b253987_voltagearea-powerdomain-pgregion-activity-7106881371071004672-55rv/
+
+https://semiengineering.com/upf-power-domains-and-boundaries/
+
+https://semiengineering.com/upf-power-domains-and-boundaries/
 
 
 <h2> ECO Fixing </h2>
