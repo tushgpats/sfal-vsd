@@ -2142,6 +2142,7 @@ Information: Completed at [ Sun Nov 10 01:36:33 2024 ]
 
 ```
 
+The fix_eco_timing command is used to correct hold timing violations in the design by inserting buffers. By specifying the -type hold option, the command focuses exclusively on addressing hold violations. The -methods insert_buffer option directs the tool to insert buffers as the method of correction. Additionally, the -buffer_list option provides a list of specific buffer cells {sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_8}, which are used for buffer insertion during this process. This approach helps achieve timing closure for hold requirements by adjusting signal delays at specific points in the design.
 
 ```
 Inserted buffers:
