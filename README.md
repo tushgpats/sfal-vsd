@@ -2195,4 +2195,20 @@ All Checks             2704      2702 (100%)         0 (  0%)         2 (  0%)
 <img width="1285" alt="Screenshot 2024-11-09 at 3 22 10 PM" src="https://github.com/user-attachments/assets/f6d0a349-a081-45bb-9d7d-6e8a3a376e24">
 
 
+We now observe that check_legality fails after sourcing vsdbabysoc_eco.tcl in ICC2 Compiler to perform ECO.  
 
+<img width="1268" alt="Screenshot 2024-11-10 at 7 27 04 AM" src="https://github.com/user-attachments/assets/221b6ef2-9f28-43c3-a310-171b16d8826d">
+
+We now use use legalize_placement command to resolve placement legalization issues.
+
+<img width="1268" alt="Screenshot 2024-11-10 at 7 27 43 AM" src="https://github.com/user-attachments/assets/605c93e7-7b62-44ab-9fae-b369c86826ed">
+
+We now use the route_eco command to perform ECO (Engineering Change Order) routing. It connects open nets first and then addresses any DRC (Design Rule Check) violations. The command options allow control over which nets are connected and specify the areas of the chip where DRC violations should be corrected.
+
+<img width="1268" alt="Screenshot 2024-11-10 at 7 31 28 AM" src="https://github.com/user-attachments/assets/39469ba8-7146-47f8-a7d0-2a7fd975ff9d">
+
+
+```
+
+
+```
