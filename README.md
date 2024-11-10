@@ -2101,36 +2101,83 @@ report_timing -delay_type min -capacitance -input_pins -nets -transition_time -n
 
 
 ```
-
 ****************************************
 Report : analysis_coverage
 Design : vsdbabysoc
 Version: T-2022.03-SP5-4
-Date   : Sat Nov  9 08:36:54 2024
+Date   : Sun Nov 10 01:34:32 2024
 ****************************************
 
 Type of Check         Total              Met         Violated         Untested
 --------------------------------------------------------------------------------
 setup                   676       675 (100%)         0 (  0%)         1 (  0%)
-hold                    676       638 ( 94%)        37 (  5%)         1 (  0%)
+hold                    676       629 ( 93%)        46 (  7%)         1 (  0%)
 min_pulse_width        1352      1352 (100%)         0 (  0%)         0 (  0%)
 --------------------------------------------------------------------------------
-All Checks             2704      2665 ( 99%)        37 (  1%)         2 (  0%)
+All Checks             2704      2656 ( 98%)        46 (  2%)         2 (  0%)
+
+1
+
+
+```
+after running fix_eco_timing -type setup in the pt shell
+
+```
+
+Final ECO Summary:
+--------------------------------------------------------
+Total number of commands                               0
+Total area increased                                0.00
+
+Fixing Summary:
+--------------------------------------------------------
+Total violating endpoints found                        0
+Total violating endpoints fixed                        0
+Total violating endpoints remaining                    0
+Total percentage of violations fixed                 0.0%
+
+Information: Elapsed time [                1 seconds ]
+Information: Completed at [ Sun Nov 10 01:36:33 2024 ]
 
 
 ```
 
 
+```
+Inserted buffers:
+   Count Lib_cell               Area          Total_area
+--------------------------------------------------------
+      46 sky130_fd_sc_hd__buf_1   3.75              172.67
+--------------------------------------------------------
+      46 TOTAL                                    172.67
 
+Final ECO Summary:
+--------------------------------------------------------
+Number of insert_buffer commands                      46
+Total number of commands                              46
+Area increased by buffer insertion                172.67
+Total area increased                              172.67
+
+Fixing Summary:
+--------------------------------------------------------
+Total violating endpoints found                       46
+Total violating endpoints fixed                       46
+Total violating endpoints remaining                    0
+Total percentage of violations fixed               100.0%
+
+Information: Elapsed time [                0 seconds ]
+Information: Completed at [ Sun Nov 10 01:39:30 2024 ]
 
 
 ```
 
+
+```
 ****************************************
 Report : analysis_coverage
 Design : vsdbabysoc
 Version: T-2022.03-SP5-4
-Date   : Sat Nov  9 09:04:07 2024
+Date   : Sun Nov 10 01:42:51 2024
 ****************************************
 
 Type of Check         Total              Met         Violated         Untested
@@ -2141,6 +2188,7 @@ min_pulse_width        1352      1352 (100%)         0 (  0%)         0 (  0%)
 --------------------------------------------------------------------------------
 All Checks             2704      2702 (100%)         0 (  0%)         2 (  0%)
 
+1
 
 ```
 
