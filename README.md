@@ -1887,8 +1887,29 @@ sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkinvkapwr_8
 
 So the Problem was now somewhat clear. There were library cells required to create VA and Buffered Nets. So i started to study more about Voltage areas to gain further clarity.
 
+In System-on-Chip (SoC) designs, voltage islands (VAs) or voltage areas are essential for optimizing power consumption across various chip regions, particularly in low-power applications. By using voltage areas, the SoC may minimize overall power consumption without compromising performance in high-priority modules by enabling specific design elements to function at lower power levels. Depending on the area's performance and functionality requirements, a different voltage level can be allocated to each VA. Power-hungry components can be isolated and their power supply dynamically adjusted by designers through careful planning of these areas, improving thermal management and energy efficiency. This is especially useful in mixed-signal architectures with RISC-V processors and specialized analog IPs, where the SoC may need to strike a compromise between power and performance.
 
+Properly defined voltage areas need to be integrated with clock domains and power domains to mitigate risks of timing violations or noise interference. Additionally, power gating mechanisms are often implemented within voltage islands to enable smooth transitions between power states, allowing the system to dynamically adjust power levels based on real-time demand. This strategic use of voltage islands enables modern SoCs to achieve robust low-power operation, delivering both efficiency and performance across a range of applications.
 
+so now i had figured out that it has something to do with power supply specifically voltage supply. i searched through the files for anything related to voltage and this is what was found.
+
+![WhatsApp Image 2024-11-06 at 6 13 43 PM](https://github.com/user-attachments/assets/f7126f94-f6a5-4f4e-a254-919921fd7b20)
+
+now i got rid of the line specifying the voltage assuming that the AI model of Synopsys will automatically use the appropriate voltage as it normally does.
+
+![WhatsApp Image 2024-11-06 at 6 14 49 PM](https://github.com/user-attachments/assets/a236c70f-9fc7-478f-8997-b873356be8a6)
+
+![WhatsApp Image 2024-11-06 at 6 17 25 PM](https://github.com/user-attachments/assets/58334ab6-56e6-48e9-acb3-aa74fd5a3dc7)
+
+so i declared it manually 
+
+<img width="1440" alt="Screenshot 2024-11-10 at 9 54 31 PM" src="https://github.com/user-attachments/assets/37649a99-bef9-47b8-9ab5-4ec08db37a08">
+
+And Voila! 
+
+![WhatsApp Image 2024-11-06 at 9 45 31 PM](https://github.com/user-attachments/assets/e8339a19-ce85-41e2-a788-6cd0ceae4f04)
+
+We can now Continue with STA. 
 
 ```
 
