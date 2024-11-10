@@ -1591,9 +1591,303 @@ We Changed the clocks in sdc constraint files with Propogated Clocks and expecte
 
 The clock despite being constrained in the sdc file to be propogated were behaving in an ideal manner. This was very peculiar behaviour and we then set to investigate what could be the reason for this. So we set out to investigate.  
 
-We decided to run the flow by manually entering parts of script one by one Upon and observing the output. We suspected that there might be some issues with CTS Further investigation 
+We decided to run the flow by manually entering parts of script one by one Upon and observing the output. We suspected that there might be some issues with CTS.  
 
 ![WhatsApp Image 2024-11-01 at 3 54 10 PM](https://github.com/user-attachments/assets/528c7a3a-4703-47dc-baff-b5cbce69a960)
+
+On careful observation it became evident that the CTS was not being performed and the reason for this was the fact that placement optimization was failing.
+
+![WhatsApp Image 2024-11-01 at 3 54 10 PM](https://github.com/user-attachments/assets/9edbf56f-368f-4318-9aa4-0a92a59f3f87)
+
+We now tried to figure out what could be the possible reasons for the same. We decided to look for errors in the flow and take them one by one.
+
+![WhatsApp Image 2024-10-23 at 4 05 51 PM](https://github.com/user-attachments/assets/a36df370-89ae-46f9-ab83-d5316a41a7d2)
+
+Initially we thought that this issue points out to incorrect path for file creating the power-ground ring/network as the issue was with voltage area, however it was amusing to notice that the path was correctly assigned.
+
+We then decided to take a look at all the warnings from the start so get a more clear understanding of the situation. And we noticed few Warnings which used to be Errors in previous Synopsys IC Compiler versions. such as DPWF-201 : Found placement blockage auto_generate_blockage with purpose information. as These warnings, while not blocking, can cause unexpected issues if not addressed.
+
+![WhatsApp Image 2024-10-23 at 4 05 22 PM (1)](https://github.com/user-attachments/assets/b307d696-1ab4-44f9-add0-fdca9eb3305e)
+
+It was Further Observed that there were errors OPT-014 and OPT-16 Which were described as "No default  buffer/inverter  available for voltage areas %s." and "User  need  to check whether the target library setting " and " User need to add library that matches the site." were the suggested solutions which were confusing as it was already verified that the correct Library was already included.
+
+Then our attention moved back to OPT-045 and OPT-043
+
+![WhatsApp Image 2024-10-23 at 4 05 51 PM (1)](https://github.com/user-attachments/assets/545e0f8c-9ed1-4ef7-a1e7-4d745d589615)
+
+on researching further i found out that presence of Warning OPT-043 is also usually accompanied with OPT-019 
+
+<img width="1440" alt="Screenshot 2024-11-10 at 8 54 43 PM" src="https://github.com/user-attachments/assets/a5b7dd9a-1903-4c20-b261-1376336806d6">
+
+This indicated that the tool Cannot find buffers or Net %s cannot be buffered. 
+
+<img width="794" alt="Screenshot 2024-11-10 at 9 02 13 PM" src="https://github.com/user-attachments/assets/fd93c7c3-82fb-4611-bbb0-694d800a4163">
+
+so the given suggestions were followed and that led to an eureka moment.
+
+
+```
+
+icc2_shell> report_pst
+**************
+Report : Power State Table
+Design : vsdbabysoc
+Version: T-2022.03-SP5
+Date   : Tue Nov  5 18:08:40 2024
+**************
+1
+icc2_shell> report_power_domains
+**************
+Report : Power Domain
+Design : vsdbabysoc
+Corner : func1
+Version: T-2022.03-SP5
+Date   : Tue Nov  5 18:09:42 2024
+**************
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Power Domain            :  DEFAULT_POWER_DOMAIN
+Current Scope           :  / (top scope)
+Elements                :  vsdbabysoc
+Voltage Area            :  DEFAULT_VA
+Available Supply Nets   :  VDD, VSS
+Available Supply Sets   :
+
+Default Supplies           - Power -     - Ground -
+  Primary               :  VDD [1.10]    VSS
+  Isolation             :  --            --
+  Retention             :  --            --
+
+Power Switch            :
+Isolation Strategy      :
+Level Shifter Strategy  :
+Repeater Strategy       :
+Retention Strategy      :
+Always on strategy      :  dual_power
+Disallow Forward Biasing
+                        :  false
+Disallow Reverse Biasing
+                        :  false
+--------------------------------------------------------------------------------------------------
+1
+
+icc2_shell> check_bufferability -nets core/n1164 -verbose
+Warning: The timing data is not up-to-date. Net dont_touch, net is_ideal and freeze_port on logical feedthrough hierarchy checks are skipped. Lib cell purposes 'cts' and 'optimization' will both be considered. (MV-162)
+
+========================================
+===      Bufferability Summary       ===
+========================================
+Specified net segment  : core/n1164
+Derived hierarchy      : core
+Derived voltage area   : DEFAULT_VA
+Primary supplies of VA : (power: VDD, ground: VSS, nwell: VDD, pwell: VSS)
+Lib cell purpose       : 'cts' || 'optimization' (timing is not up-to-date)
+
+Information: Cannot insert single rail buffers or inverters because of no available lib_cells. But required supply nets (power: VDD, ground: VSS, nwell: VDD, pwell: VSS) are available. (MV-456)
+
+========================================
+===      Bufferability Problems      ===
+========================================
+No legal lib cells are available for buffering
+
+========================================
+===  Buffering Supply Availability   ===
+========================================
+Driver                Related        Related        Power          Equivalent Pwr/Gnd  Pin
+And Loads             Power          Ground         Domain         Available in VA     Type
+------------------------------------------------------------------------------------------------------------------------
+## Driver: (1 pin)
+core/U4/Y             VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+## Loads: (26 pins)
+core/U1570/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1557/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1544/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1532/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1520/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1507/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1494/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1481/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1468/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1455/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1442/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1430/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1418/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1406/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1393/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1381/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1365/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1355/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1345/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1335/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1325/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1319/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1313/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1307/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1301/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+core/U1295/B2         VDD            VSS            DEFAULT_POWER_DOMAIN
+                                                                   yes / yes           normal
+
+The target domain primary equivalent supply nets are selected for buffering.
+load pin type summary: normal (26).
+
+========================================
+===      Lib Cell Availability       ===
+========================================
+Available buffer lib cells     : 0
+Available inverter lib cells   : 0
+Unavailable buffer lib cells   : 35
+Unavailable inverter lib cells : 21
+
+----------------------------------------
+---      Unavailable Lib Cells       ---
+----------------------------------------
+Lib cell name                                   Reason to filter out
+--------------------------------------------------------------------------------
+## Buffers: (35 lib_cells)
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_buf_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_buf_12
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_buf_16
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_buf_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_buf_4
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_buf_6
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_buf_8
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_bufbuf_16
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_bufbuf_8
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkbuf_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkbuf_16
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkbuf_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkbuf_4
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkbuf_8
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkdlybuf4s15_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkdlybuf4s15_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkdlybuf4s18_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkdlybuf4s18_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkdlybuf4s25_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkdlybuf4s25_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkdlybuf4s50_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkdlybuf4s50_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_dlygate4sd1_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_dlygate4sd2_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_dlygate4sd3_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_dlymetal6s2s_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_dlymetal6s4s_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_dlymetal6s6s_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkbufkapwr_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkbufkapwr_16
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkbufkapwr_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkbufkapwr_4
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkbufkapwr_8
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_probe_p_8
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_probec_p_8
+                                                voltage mismatch
+## Inverters: (21 lib_cells)
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_bufinv_16
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_bufinv_8
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkinv_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkinv_16
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkinv_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkinv_4
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkinv_8
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkinvlp_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_clkinvlp_4
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_inv_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_inv_12
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_inv_16
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_inv_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_inv_4
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_inv_6
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_inv_8
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkinvkapwr_1
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkinvkapwr_16
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkinvkapwr_2
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkinvkapwr_4
+                                                voltage mismatch
+sky130_fd_sc_hd_tt_025C_1v80/sky130_fd_sc_hd_lpflow_clkinvkapwr_8
+                                                voltage mismatch
+
+```
+
+So the Problem was now somewhat clear. There were library cells required to create VA and Buffered Nets. So i started to study more about Voltage areas to gain further clarity.
+
+
 
 
 ```
