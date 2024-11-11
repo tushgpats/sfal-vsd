@@ -2408,6 +2408,36 @@ https://semiengineering.com/upf-power-domains-and-boundaries/
 
 <h2> ECO Fixing </h2>
 
+Engineering Change Orders (ECOs) are an indispensable part of the VLSI (Very Large Scale Integration) design workflow, providing a structured way for designers to introduce necessary adjustments and corrections into semiconductor chip designs without restarting the entire design process. ECOs streamline design productivity and reduce production costs by enabling changes to be applied efficiently after initial design stages.
+
+Definition and Purpose of ECO
+An Engineering Change Order (ECO) is a carefully controlled process that allows modifications to be made to a semiconductor chip design after it has already passed through essential phases like synthesis, placement, and routing. ECOs address design updates, ranging from correcting functional errors to enhancing performance or meeting revised specifications. This capability is especially critical in the semiconductor industry, where rapid product development and short time-to-market cycles are essential to stay competitive. ECOs enable designers to implement these changes without having to go back to square one, saving time, resources, and costs.
+
+Types of ECO
+ECOs are broadly categorized into two main types based on the scope and depth of modifications:
+
+All Layers ECO:
+
+This type of ECO involves changes across both base and metal layers of the chip.
+It is usually applied when substantial modifications are required, such as updates to the hard macros (larger, predefined blocks within the design), or extensive changes that span multiple layers of the chip.
+Since all layers, including the base, are affected, this ECO type can be costly and complex, often necessitating new masks and increased design effort. However, it is sometimes the only way to accommodate major design revisions.
+
+
+Metal-Only ECO:
+
+Metal-only ECOs focus exclusively on changes to the metal layers of the design, leaving the base layers untouched.
+This approach is often preferred because it is less costly than all-layers ECOs; metal layers are generally easier and cheaper to modify, especially regarding mask costs.
+Metal-only ECOs are commonly used for minor changes that don’t require alterations to the base design, such as routing modifications, small buffer insertions, or tweaks in signal paths. This type of ECO is ideal for small adjustments that can correct timing issues or minor functional updates.
+
+Implementing functional ECOs requires careful analysis to ensure that the new logic integrates seamlessly with the existing design, maintaining overall system integrity. While ECOs offer significant benefits, they come with challenges, such as computational complexity and physical design constraints.
+
+
+
+As We know from our STA Implementation that the Slack is being met. Therefore we do not need to Further Optimize the design in order for it to satisfy timing. 
+Despite their advantages, ECOs face several challenges, primarily due to computational complexity, physical constraints, and verification demands. Implementing ECOs, especially functional ones, can be computationally intensive because they require precise integration with the existing design. Furthermore, designs often have strict physical restrictions, making it difficult to incorporate changes without impacting other design aspects. Verification adds another layer of complexity, as thorough processes are necessary to ensure that ECOs do not introduce new errors, thereby increasing the time and effort required for successful implementation.
+
+Hence ECO has been performed in this case So as to gain knowledge of the ECO flow rather than Need to Satisfy Design Specification Demands.
+
 ```
 
 set link_path "* /home/ganesh/ICC2Exp/VSDBabySoC_ICC2/sky130_fd_sc_hd__tt_025C_1v80.db /home/ganesh/ICC2Exp/VSDBabySoC_ICC2/avsdpll.db /home/ganesh/ICC2Exp/VSDBabySoC_ICC2/avsddac.db"
@@ -2544,6 +2574,11 @@ We now use the route_eco command to perform ECO (Engineering Change Order) routi
 
 ```
 
+https://www.synopsys.com/glossary/what-is-functional-eco.html
+https://www.linkedin.com/pulse/engineering-change-order-physical-design
+https://vlsiuniverse.blogspot.com/2013/05/engineering-change-order-eco.html
+https://www.techsimplifiedtv.in/2023/11/what-is-engineering-change-ordereco-in.html
+https://people.eecs.berkeley.edu/~alanmi/publications/other/date20_eco1.pdf
 
 ```
 <h2>  Acknowledgements  </h2>
