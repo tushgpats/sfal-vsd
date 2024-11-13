@@ -1372,8 +1372,9 @@ Max Trans Violations:                29
 Max Cap Violations:                  42
 ----------------------------------------
 ```
-<h2> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs: CTS Optimization and STA  </h2>
+<h2> Optimizing Clock Tree Synthesis for Enhanced ASIC Performance on a RISC-V SoC using Skywater 130nm PDK </h2>
 
+Project Description: Executed an optimization project focused on Clock Tree Synthesis (CTS) to enhance ASIC performance for a RISC-V System-on-Chip (SoC) designed with the Skywater 130nm Process Design Kit (PDK). This project involved defining clock regions and minimizing skew within the constraints of the 130nm technology. By applying advanced CTS algorithms, I achieved improved timing synchronization and reduced clock skew & transition, leading to improved power consumption. EDA tools were used extensively for simulation and validation, enabling precise analysis of clock distribution across multiple domains within the RISC-V SoC, ultimately enhancing overall chip efficiency and performance.
 
 After routing is completed, in icc2_shell, we can extract parasitics information in .SPEF format by using following command :
 ```
