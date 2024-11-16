@@ -1,4 +1,5 @@
-<h1>VSD Hardware Digital Program -Digital</h1>
+<details>
+<summary> <h1>VSD Yosys, DC Shell, Simulation labs </h1> </summary>
 
 <h2>Tool Installation</h2>
 
@@ -527,7 +528,7 @@ $   close $FH
 <img width="763" alt="Screenshot 2024-07-12 at 4 26 19 PM" src="https://github.com/user-attachments/assets/3e9ba184-b95c-4575-b2cb-e2acf40cf420">
 ![Worst Hold Slack (WHS) across PVT Corners](https://github.com/user-attachments/assets/9a815207-4d30-4323-955e-5beefda71a6e)
 ![Worst Negative Slack (WNS) across PVT Corners](https://github.com/user-attachments/assets/191549e3-74dc-49c8-af7d-5210f7c78f03)
-
+</details>
 
 
 <details>
