@@ -958,13 +958,11 @@ Next, ensure that you are using the post-route netlist for the analysis. This ne
 A critical step in the process involves incorporating parasitic capacitance data from the SPEF (Standard Parasitic Exchange Format) file. This file contains information about the parasitic capacitance of the nets, which significantly impacts timing analysis.You need to read this SPEF file before generating the custom timing report. 
 
 We Finally, generate a custom timing report using the appropriate STA tool. 
-
 </details>
 
 
 <details>
-
-<summary> <h2> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs </h2> </summary>
+<summary> <h1> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs </h1> </summary>
 
 Abstract - The project aims to design and analyze a mixed-signal System-on-Chip (SoC) that integrates a RISC-V processor with two custom analog IPs. It focuses on overcoming design challenges like congestion and Design Rule Check (DRC) violations to ensure an optimized layout. The analog IPs could involve components such as ADCs, PLLs, or comparators, interfacing seamlessly with the digital RISC-V core. Special attention will be given to the interaction between digital and analog blocks, ensuring noise isolation and minimal coupling, while maintaining adherence to PDK constraints.
 
@@ -1378,12 +1376,11 @@ Max Trans Violations:                29
 Max Cap Violations:                  42
 ----------------------------------------
 ```
-
 </details>
 
 
 <details>
-<summary> <h2> Optimizing Clock Tree Synthesis for Enhanced ASIC Performance on a RISC-V SoC using Skywater 130nm PDK </h2> </summary>
+<summary> <h1> Optimizing Clock Tree Synthesis for Enhanced ASIC Performance on a RISC-V SoC using Skywater 130nm PDK </h1> </summary>
 
 Project Description: Executed an optimization project focused on Clock Tree Synthesis (CTS) to enhance ASIC performance for a RISC-V System-on-Chip (SoC) designed with the Skywater 130nm Process Design Kit (PDK). This project involved defining clock regions and minimizing skew within the constraints of the 130nm technology. By applying advanced CTS algorithms, I achieved improved timing synchronization and reduced clock skew & transition, leading to improved power consumption. EDA tools were used extensively for simulation and validation, enabling precise analysis of clock distribution across multiple domains within the RISC-V SoC, ultimately enhancing overall chip efficiency and performance.
 
