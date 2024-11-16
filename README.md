@@ -408,6 +408,7 @@ We will now dive deep into Clock network modellling and IO Delays.
 
 
 <h1> Day 13 Post-Synthesis Simulation (GLS) of BabySoC </h1>
+
 <h2> Presynthesis Simulation </h2>
 Pre-synthesis simulation ensures that the designed logic performs the intended functionality. It allows designers to check if the design meets the initial specifications and behavioral expectations before any optimization or modification by synthesis tools.It helps in identifying and correcting logic errors, coding mistakes, and functional mismatches early in the design cycle, reducing the risk of propagating these errors to later stages.
 
@@ -526,8 +527,11 @@ $   close $FH
 <img width="763" alt="Screenshot 2024-07-12 at 4 26 19 PM" src="https://github.com/user-attachments/assets/3e9ba184-b95c-4575-b2cb-e2acf40cf420">
 ![Worst Hold Slack (WHS) across PVT Corners](https://github.com/user-attachments/assets/9a815207-4d30-4323-955e-5beefda71a6e)
 ![Worst Negative Slack (WNS) across PVT Corners](https://github.com/user-attachments/assets/191549e3-74dc-49c8-af7d-5210f7c78f03)
+
+
+
 <details>
-<summary> <h1> Pre-requisites for Floorplanning, P&R : PD Basic concepts </h1> </summary> 
+<summary> <h1>  Transient analysis of an Inverter Cell and integration into Openlane flow.</h1> </summary> 
 
 <h2> SOC </h2>
 A System on Chip (SoC) integrates various components and functionalities of a complete system, including processors, memory, peripherals, and interconnects, onto a single chip. This integration enables the development of compact, efficient, and high-performance systems.
@@ -958,7 +962,9 @@ We Finally, generate a custom timing report using the appropriate STA tool.
 </details>
 
 
-<h2> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs </h2>
+<details>
+
+<summary> <h2> Congestion-Aware DRC-Compliant Mixed-Signal SoC Design Incorporating RISC-V Processor and Dual Analog IPs </h2> </summary>
 
 Abstract - The project aims to design and analyze a mixed-signal System-on-Chip (SoC) that integrates a RISC-V processor with two custom analog IPs. It focuses on overcoming design challenges like congestion and Design Rule Check (DRC) violations to ensure an optimized layout. The analog IPs could involve components such as ADCs, PLLs, or comparators, interfacing seamlessly with the digital RISC-V core. Special attention will be given to the interaction between digital and analog blocks, ensuring noise isolation and minimal coupling, while maintaining adherence to PDK constraints.
 
@@ -1372,7 +1378,12 @@ Max Trans Violations:                29
 Max Cap Violations:                  42
 ----------------------------------------
 ```
-<h2> Optimizing Clock Tree Synthesis for Enhanced ASIC Performance on a RISC-V SoC using Skywater 130nm PDK </h2>
+
+</details>
+
+
+<details>
+<summary> <h2> Optimizing Clock Tree Synthesis for Enhanced ASIC Performance on a RISC-V SoC using Skywater 130nm PDK </h2> </summary>
 
 Project Description: Executed an optimization project focused on Clock Tree Synthesis (CTS) to enhance ASIC performance for a RISC-V System-on-Chip (SoC) designed with the Skywater 130nm Process Design Kit (PDK). This project involved defining clock regions and minimizing skew within the constraints of the 130nm technology. By applying advanced CTS algorithms, I achieved improved timing synchronization and reduced clock skew & transition, leading to improved power consumption. EDA tools were used extensively for simulation and validation, enabling precise analysis of clock distribution across multiple domains within the RISC-V SoC, ultimately enhancing overall chip efficiency and performance.
 
@@ -2582,6 +2593,9 @@ https://www.techsimplifiedtv.in/2023/11/what-is-engineering-change-ordereco-in.h
 https://people.eecs.berkeley.edu/~alanmi/publications/other/date20_eco1.pdf
 
 ```
+</details>
+
+
 <h2>  Acknowledgements  </h2>
 
 Firstly, I would like to extend my heartfelt gratitude to VSD and SFAL, for their invaluable guidance and support throughout the VSD SoC Design and Planning training. Huge shoutout to Mr. Kunal Ghosh, founder of VSD for his invaluable guidance and support throughout the training. A particular highlight of the program is Kunal’s uncanny ability to elucidate even the most recondite terms in simple, understandable language.
